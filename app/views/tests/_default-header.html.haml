@@ -1,0 +1,16 @@
+.header
+  .top-bar
+    = image_tag 'logo.svg', size: "134x36", class: "top-bar__icon"
+    %form.top-bar__form
+      %input.top-bar__form__search-bar{ type: "text", placeholder: "キーワードで探す"}
+      = fa_icon "search"
+  .bottom-bar
+    %ul.bottom-bar__left
+      %li.bottom-bar__left__cate
+      %li.bottom-bar__left__brand
+    %ul.bottom-bar__right
+      %li.bottom-bar__right__mypage
+      %li.bottom-bar__right__notice
+      %li.bottom-bar__right__todo
+
+
