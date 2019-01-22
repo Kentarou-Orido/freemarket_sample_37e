@@ -11,9 +11,7 @@
 |first_name_kana|string|null:false|
 |password|string|null:false, unique: true|
 |telephone|string||
-|birth_year|integer|null:false, unique: true|
-|birth_month|integer|null:false, unique: true|
-|birth_day|integer|null:false, unique: true|
+|birthday|data|null:false, unique: true|
 |icon|string|unique: true|
 
 ## Association
@@ -66,7 +64,7 @@
 |building_name|string||
 
 ## Association
- - belongs_to:user
+- belongs_to:user
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -78,7 +76,7 @@
 ## Association
 - belongs_to:item
 
-## commnetsテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null:false|
