@@ -14,7 +14,7 @@
 |birth_year|integer|null:false, unique: true|
 |birth_month|integer|null:false, unique: true|
 |birth_day|integer|null:false, unique: true|
-|aicon|string|unique: true|
+|icon|string|unique: true|
 
 ## Association
 - has_many:items
@@ -29,7 +29,7 @@
 |user_id|references|null:false, foreign_key: true|
 |buyer_id|references|null:false, foreign_key: true|
 |brand|sting||
-|status|string|null:false|
+|status|integer|null:false|
 |condition|string|null:false|
 |postage|string|null:false|
 |area|sting|null:false|
