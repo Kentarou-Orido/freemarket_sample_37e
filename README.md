@@ -40,6 +40,7 @@
 - has_many:comments
 - has_many:images
 - has_many:categories
+- has_many:brands
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -93,6 +94,16 @@
 |id|integer|null:false|
 |item_id|references|null:false, foreign_key: true|
 |image_url|string|null:false|
+
+## Association
+- belongs_to:item
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false|
+|item_id|references|null:false, foreign_key: true|
+|name|string||
 
 ## Association
 - belongs_to:item
