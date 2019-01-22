@@ -30,10 +30,10 @@
 |buyer_id|references|null:false, foreign_key: true|
 |brand|sting||
 |status|integer|null:false|
-|condition|string|null:false|
+|condition|integer|null:false|
 |postage|string|null:false|
 |area|sting|null:false|
-|shipping_method|null:false|
+|shipping_method|integer|null:false|
 |size|string||
 |text|text|null:false|
 
@@ -50,8 +50,7 @@
 |user_id|references|null:false, foreign_key: true|
 |name|string|null:false|
 |card_number|integer|null:false|
-|expiration_month|integer|null:false|
-|expiration_year|integer|null:false|
+|expiration_data|data|null:false|
 |security_code|integer|null:false|
 
 ## Association
