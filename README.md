@@ -9,10 +9,11 @@
 |first_name|string|null:false|
 |family_name_kana|string|null:false|
 |first_name_kana|string|null:false|
-|password|string|null:false, unique: true|
+|encrypted_password|string|null:false, unique: true|
 |telephone|string||
 |birthday|data|null:false, unique: true|
 |icon|string|unique: true|
+|email|string|null:false|
 
 ## Association
 - has_many:items
