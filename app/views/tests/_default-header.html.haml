@@ -11,6 +11,8 @@
         %li.bottom-bar__left__list__cate
           %h2.bottom-bar__left__list__cate__h2
             = link_to "カテゴリーから探す", "https://www.mercari.com/jp/", class: "bottom-bar__left__list__cate__h2__link"
+          %ul.bottom-bar__left__list__cate__parents
+            = render partial: 'categories', collection: @categories
         %li.bottom-bar__left__list__brand
           %h2.bottom-bar__left__list__brand__h2
             = link_to "ブランドから探す", "https://www.mercari.com/jp/", class: "bottom-bar__left__list__brand__h2__link"
