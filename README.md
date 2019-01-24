@@ -26,10 +26,10 @@
 |name|string|null:false|
 |price|integer|null:false|
 |user_id|references|null:false, foreign_key: true|
-|buyer_id|references|null:false, foreign_key: true|
-|brand|sting||
-|status|integer|null:false|
-|condition|integer|null:false|
+<!-- |buyer_id|references|null:false, foreign_key: true| -->
+<!-- |brand|sting|| -->
+|trade_status|integer|null:false|
+|item_condition|integer|null:false|
 |postage|string|null:false|
 |area|sting|null:false|
 |shipping_method|integer|null:false|
@@ -108,3 +108,8 @@
 
 ## Association
 - belongs_to:item
+
+## マイグレートに際して、カラム関係の変更点(by 織戸)
+
+### itemsテーブルに関して
+buyer_idカラムとbrandカラムを削除
