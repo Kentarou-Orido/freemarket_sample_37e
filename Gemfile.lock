@@ -232,9 +232,14 @@ DEPENDENCIES
   capistrano3-unicorn
   coffee-rails (~> 4.2)
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-awesome-rails
 =======
   devise
+>>>>>>> master
+=======
+  devise
+  font-awesome-rails
 >>>>>>> master
   haml-rails
   jbuilder (~> 2.5)
