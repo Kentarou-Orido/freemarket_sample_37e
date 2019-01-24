@@ -1,6 +1,7 @@
 .header
   .top-bar
-    = image_tag 'logo.svg', size: "134x36", class: "top-bar__icon"
+    = link_to "https://www.mercari.com/jp/", class:"top-bar__link" do
+      = image_tag 'logo.svg', size: "134x36", class: "top-bar__link__icon"
     %form.top-bar__form
       %input.top-bar__form__search-bar{ type: "text", placeholder: "キーワードから探す"}
       = fa_icon "search"

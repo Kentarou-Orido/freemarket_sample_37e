@@ -8,9 +8,13 @@
   margin: 0 auto;
   padding: 0;
   height: 36px;
-  &__icon{
-    height: 36px;
-    float: left;
+  &__link{
+    display: block;
+    color: #333;
+    &__icon{
+      height: 36px;
+      float: left;
+    }
   }
   &__form{
     float: right;
