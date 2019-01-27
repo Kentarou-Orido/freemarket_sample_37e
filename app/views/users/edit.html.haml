@@ -1,0 +1,15 @@
+/ =render ""
+
+.setting-profile.clearfix
+  .setting-profile__inner
+    %h2.setting-profile__inner--header プロフィール
+    / = form_for(current_user) do |f|
+    .setting-profile__inner__icon
+      %image{src: 'member_photo_noimage_thumb.png', class: 'setting-profile__inner__icon--image'}
+      %input.setting-profile__inner__icon--name{placeholder: 'name'}
+      / = f.text_field :name, autofocus: true
+    .setting-profile__inner__content
+      %textarea.setting-profile__inner__content--body{placeholder: '例）こんにちは☆ご覧いただきありがとうございます！可愛いものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に９号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
+      / = f.textarea :content,
+      / = f.submit '変更する', class: 'submit'
+      .setting-profile__inner__content--button 変更する
