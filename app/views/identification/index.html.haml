@@ -1,0 +1,41 @@
+/ = render ""
+
+.setting-identification.clearfix
+  .setting-identification__inner
+    %h2.setting-identification__inner--header 本人情報の登録
+    %p.setting-identification__inner--header-text お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+    .setting-identification__inner--body
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label お名前
+        %span.setting-identification__inner--body__form-require 必須
+        %input.setting-identification__inner--body__form-input{placeholder: '例）山田'}
+        %input.setting-identification__inner--body__form-input{placeholder: '例）彩'}
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label お名前カナ
+        %span.setting-identification__inner--body__form-require 必須
+        %input.setting-identification__inner--body__form-input{placeholder: '例）ヤマダ'}
+        %input.setting-identification__inner--body__form-input{placeholder: '例）アヤ'}
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label 郵便番号
+        %span.setting-identification__inner--body__form-arbitrary 任意
+        %input.setting-identification__inner--body__form-input{placeholder: '例）1234567'}
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label 都道府県
+        %span.setting-identification__inner--body__form-require 必須
+        %input.setting-identification__inner--body__form-input{placeholder: '北海道'}
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label 市区町村
+        %span.setting-identification__inner--body__form-require 必須
+        %input.setting-identification__inner--body__form-input{placeholder: '例）横浜市緑区'}
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label 番地
+        %span.setting-identification__inner--body__form-require 必須
+        %input.setting-identification__inner--body__form-input{placeholder: '例）青山1-1-1'}
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label 建物名
+        %span.setting-identification__inner--body__form-arbitrary 任意
+        %input.setting-identification__inner--body__form-input{placeholder: '例）柳ビル103'}
+      .setting-identification__inner--body__form
+        %label.setting-identification__inner--body__form-label 生年月日
+        %span.setting-identification__inner--body__form-require 必須
+        %input.setting-identification__inner--body__form-input{placeholder: '例）青山1-1-1'}
