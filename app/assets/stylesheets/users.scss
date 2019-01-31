@@ -1,3 +1,6 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./modules/default-header";
+@import "./modules/bread-crumbs";
+@import "./modules/users/show/show";
+@import "./modules/users/show/show-mypage-main";
+@import "./modules/users/show/mypage-side";
+@import "./modules/users/show/mypage-content";
