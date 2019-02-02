@@ -3,7 +3,7 @@
   padding: 8px 0 0;
   background: #fff;
 
-  .pc-header-inner__clearfix {
+  &-inner__clearfix {
     width: 1020px;
     margin: 0 auto;
     padding: 0;
@@ -25,23 +25,23 @@
   }
 
   .pc-header-form {
-  float: right;
-  position: relative;
-  width: calc(100% - (134px + 16px));
+    float: right;
+    position: relative;
+    width: calc(100% - (134px + 16px));
 
-  &__input-default {
-    width: 100%;
-    height: 16px;
-    padding: 9px 0;
-    background: #fafafa;
-    margin: 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: 0;
-  }
+    &__input-default {
+      width: 100%;
+      height: 16px;
+      padding: 9px 0;
+      background: #fafafa;
+      margin: 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: 0;
+    }
   }
 
-  .pc-header-inner__pc-header-nav-box {
+  &-inner__pc-header-nav-box {
     padding-top: 8px;
     width: 1020px;
     margin: 0 auto;
@@ -81,17 +81,17 @@
     .l-right {
       float: right;
 
-        .pc-header-user-nav {
-          li {
-            display: inline-block;
-            margin: 0;
-            height: 38px;
-            vertical-align: middle;
-          }
+      .pc-header-user-nav {
+        li {
+          display: inline-block;
+          margin: 0;
+          height: 38px;
+          vertical-align: middle;
+        }
 
-          li + li {
-            padding-left: 10px;
-          }
+        li + li {
+          padding-left: 10px;
+        }
 
         .sp-header-user-icon {
           font-size: 14px;
@@ -131,7 +131,7 @@
           height: 38px;
           line-height: 33px;
         }
-        }
+      }
     }
   }
 }
