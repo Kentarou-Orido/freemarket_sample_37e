@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resource :users, only: [:show] do
     resource :profile,:identification, only: [:show]
   end
+  resource :logout, only: [:show]
 end
