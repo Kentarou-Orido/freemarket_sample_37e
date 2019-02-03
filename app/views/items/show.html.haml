@@ -15,24 +15,24 @@
           .owl-stage{style: "left: 0px;"}
             .owl-item.active
               .owl-item-inner
-                %img.owl-lazy{alt: "正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ", "data-src": "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823", src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823", style: "opacity: 1;"}
+                =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823", style: "opacity: 1;",class: "owl-lazy")
         .owl-dots
           .owl-dot.active
             %span
             .owl-dot-inner
-              %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823"}
+              =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823")
           .owl-dot
             %span
             .owl-dot-inner
-              %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_2.jpg?1539045823"}
+              =image_tag ("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_2.jpg?1539045823")
           .owl-dot
             %span
             .owl-dot-inner
-              %img.is-higher-width{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_3.jpg?1539045823"}
+              =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_3.jpg?1539045823",class: "is-higher-width")
           .owl-dot
             %span
             .owl-dot-inner
-              %img.is-higher-width{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_4.jpg?1539045823"}
+              =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_4.jpg?1539045823",class: "is-higher-width")
     .item-price-box.text-center.visible-sp
       %span.item-price.bold ¥ 3,380
       %span.item-tax (税込)
@@ -47,13 +47,13 @@
             %a{href: "https://www.mercari.com/jp/u/387561164/"} DPS(ぶーん)@カウントダウンTV
             %div
               .item-user-ratings
-                %i.fa.fa-smile-o
+                =fa_icon "smile-o"
                 %span 807
               .item-user-ratings
-                %i.fa.fa-meh-o
+                =fa_icon "meh-o"
                 %span 25
               .item-user-ratings
-                %i.fa.fa-frown-o
+                =fa_icon "frown-o"
                 %span 3
         %tr
           %th カテゴリー
@@ -62,12 +62,12 @@
               %div レディース
             %a{href: "https://www.mercari.com/jp/category/20/"}
               .item-detail-table-sub-category
-                %i.fa.fa-angle-right
+                =fa_icon "angle-right"
                 バッグ
             %a{href: "https://www.mercari.com/jp/category/214/"}
               .item-detail-table-sub-sub-category
                 %i.fa.fa-angle-right
-                ショルダーバッグ
+                =fa_icon "angle-left"
         %tr
           %th ブランド
           %td
@@ -141,15 +141,15 @@
   .item-button-container.clearfix
     .item-button-left
       %a.item-button.item-button-like{href: "https://www.mercari.com/jp/login/?login_callback=https://item.mercari.com/jp/m70068440240/&login_message=like"}
-        %i.fa.fa-heart-o
+        =fa_icon "heart-o"
         %span いいね!
         %span{"data-num": "like"} 7
       %a.item-button.item-button-report.clearfix{href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Freport%2Fm70068440240%2F"}
-        %i.fa.fa-flag-o
+        =fa_icon "flag-o"
         %span 不適切な商品の報告
     .item-button-right
       %a{href: "https://www.mercari.com/jp/safe/description/", target: "_blank"}
-        %i.fa.fa-lock
+        =fa_icon "lock"
         %span あんしん・あんぜんへの取り組み
 
 //message
@@ -174,13 +174,13 @@
   %ul.social-media-box
     %li
       %a.share-btn
-        %i.fa.fa-facebook-official
+        =fa_icon "facebook-official"
     %li
       %a.share-btn
-        %i.fa.fa-twitter
+        =fa_icon "twitter"
     %li
       %a.share-btn
-        %i.fa.fa-pinterest
+        =fa_icon "pinterest"
 
 //other items
 .items-in-user-profile
