@@ -1,0 +1,122 @@
+.l-content {
+  float: right;
+  width: 700px;
+
+  .bold {
+    font-weight: 600;
+  }
+}
+
+.mypage-user-icon {
+  background-image: image-url("user-bg.jpg");
+  position: relative;
+  height: 160px;
+  padding: 20px;
+
+  a {
+    display: block;
+    position: absolute;
+    top: 22%;
+    left: 0;
+    right: 0;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    }
+
+  figure {
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  h2 {
+    margin: 8px 0 0;
+    font-size: 14px;
+  }
+
+  &__mypage-number {
+    margin: 7px 0 0;
+    font-size: 0;
+
+    div {
+      display: inline-block;
+      font-size: 13px;
+    }
+
+    div + div {
+        margin: 0 0 0 16px;
+    }
+
+    span {
+      margin-left: 8px;
+    }
+  }
+}
+
+.mypage-tabs {
+  border: 0;
+  background: #eee;
+  font-size: 0;
+
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+    text-decoration: none;
+  }
+
+  li {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+
+    &.active {
+      border-top: 2px solid #ea352d;
+      background: #fff;
+    }
+  }
+}
+
+.tab-content {
+  background-color: #fff;
+
+  .tab-pane {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.mypage-item-not-found {
+  padding: 160px 0 60px;
+  background-image: image-url("not-found-item.svg");
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  background-size: 78px 85px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.mypage-tab-container {
+  margin: 40px 0 0;
+
+  &__mypage-tab-head {
+    padding: 0 16px;
+    background: #fafafa;
+    line-height: 72px;
+  }
+}
