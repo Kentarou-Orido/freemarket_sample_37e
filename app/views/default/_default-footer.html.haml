@@ -1,4 +1,19 @@
 .app-banner
+  .app-banner-pc
+    .app-banner-pc-inner
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .app-banner-icon
+        %figure
+          = image_tag "mercari_icon.png"
+        %ul.clearfix
+          %li
+            = image_tag "apple-badge.svg"
+          %li
+            = image_tag "play-badge.svg"
+    .download
+      = image_tag "download_content_pc.png"
+
 %footer.global-footer
   %nav
     %ul
@@ -76,13 +91,19 @@
       %li.footer-cell
         %h2.footer-head
           国
-        %ul
+        %ul.footer-nav-lang
           %li
-            %a United States
+            %a
+              = image_tag "icn-us-flag.svg"
+              United States
           %li
-            %a United Kingdom
+            %a
+              = image_tag "icn-uk-flag.svg"
+              United Kingdom
           %li
-            %a 日本
+            %a
+              = image_tag "icn-jp-flag.svg"
+              日本
 
   .footer-logo
     = image_tag "logo-white.svg", class: 'image'
