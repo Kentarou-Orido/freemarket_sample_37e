@@ -1,190 +1,193 @@
-%section.item-box-container.l-single-container
-  %h1.item-name 正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ
-  %p.item-wording
-    『正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ』は、804回の取引実績を持つ
-    %a{href: "https://www.mercari.com/jp/u/387561164/"}> DPS(ぶーん)@カウントダウンTV
-    さんから出品されました。
-    %a{href: "https://www.mercari.com/jp/brand/539/"}> コーチ
-    （
-    %a{href: "https://www.mercari.com/jp/category/214/"}> ショルダーバッグ/レディース
-    ）の商品で、兵庫県から1~2日で発送されます。
-  .item-main-content.clearfix
-    .item-photo
-      .owl-carousel.owl-loaded.owl-drag
-        .owl-stage-outer
-          .owl-stage{style: "left: 0px;"}
-            .owl-item.active
-              .owl-item-inner
-                =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823", style: "opacity: 1;",class: "owl-lazy")
-        .owl-dots
-          .owl-dot.active
-            %span
-            .owl-dot-inner
-              =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823")
-          .owl-dot
-            %span
-            .owl-dot-inner
-              =image_tag ("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_2.jpg?1539045823")
-          .owl-dot
-            %span
-            .owl-dot-inner
-              =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_3.jpg?1539045823",class: "is-higher-width")
-          .owl-dot
-            %span
-            .owl-dot-inner
-              =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_4.jpg?1539045823",class: "is-higher-width")
-    .item-price-box.text-center.visible-sp
+.default-container
+  = render partial: "default/default-header"
+  = render partial: "users/show/bread-crumbs"
+  %section.item-box-container.l-single-container
+    %h1.item-name 正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ
+    %p.item-wording
+      『正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ』は、804回の取引実績を持つ
+      %a{href: "https://www.mercari.com/jp/u/387561164/"}> DPS(ぶーん)@カウントダウンTV
+      さんから出品されました。
+      %a{href: "https://www.mercari.com/jp/brand/539/"}> コーチ
+      （
+      %a{href: "https://www.mercari.com/jp/category/214/"}> ショルダーバッグ/レディース
+      ）の商品で、兵庫県から1~2日で発送されます。
+    .item-main-content.clearfix
+      .item-photo
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage{style: "left: 0px;"}
+              .owl-item.active
+                .owl-item-inner
+                  =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823", style: "opacity: 1;",class: "owl-lazy")
+          .owl-dots
+            .owl-dot.active
+              %span
+              .owl-dot-inner
+                =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_1.jpg?1539045823")
+            .owl-dot
+              %span
+              .owl-dot-inner
+                =image_tag ("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_2.jpg?1539045823")
+            .owl-dot
+              %span
+              .owl-dot-inner
+                =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_3.jpg?1539045823",class: "is-higher-width")
+            .owl-dot
+              %span
+              .owl-dot-inner
+                =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70068440240_4.jpg?1539045823",class: "is-higher-width")
+      .item-price-box.text-center.visible-sp
+        %span.item-price.bold ¥ 3,380
+        %span.item-tax (税込)
+        %span.item-shipping-fee 送料込み
+      %section.visible-sp
+        .item-buy-btn.f18-24 購入画面に進む
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              %a{href: "https://www.mercari.com/jp/u/387561164/"} DPS(ぶーん)@カウントダウンTV
+              %div
+                .item-user-ratings
+                  =fa_icon "smile-o"
+                  %span 807
+                .item-user-ratings
+                  =fa_icon "meh-o"
+                  %span 25
+                .item-user-ratings
+                  =fa_icon "frown-o"
+                  %span 3
+          %tr
+            %th カテゴリー
+            %td
+              %a{href: "https://www.mercari.com/jp/category/1/"}
+                %div レディース
+              %a{href: "https://www.mercari.com/jp/category/20/"}
+                .item-detail-table-sub-category
+                  =fa_icon "angle-right"
+                  バッグ
+              %a{href: "https://www.mercari.com/jp/category/214/"}
+                .item-detail-table-sub-sub-category
+                  =fa_icon "angle-right"
+                  ショルダーバッグ
+          %tr
+            %th ブランド
+            %td
+              %a{href: "https://www.mercari.com/jp/brand/539/"}
+                %div
+                  コーチ
+          %tr
+            %th 商品の状態
+            %td やや傷や汚れあり
+          %tr
+            %th 配送料の負担
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td
+              %a{href: "https://www.mercari.com/jp/area/28/"} 兵庫県
+          %tr
+            %th 発送日の目安
+            %td 1~2日で発送
+    .item-price-box.text-center
       %span.item-price.bold ¥ 3,380
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
-    %section.visible-sp
-      .item-buy-btn.f18-24 購入画面に進む
-    %table.item-detail-table
-      %tbody
-        %tr
-          %th 出品者
-          %td
-            %a{href: "https://www.mercari.com/jp/u/387561164/"} DPS(ぶーん)@カウントダウンTV
-            %div
-              .item-user-ratings
-                =fa_icon "smile-o"
-                %span 807
-              .item-user-ratings
-                =fa_icon "meh-o"
-                %span 25
-              .item-user-ratings
-                =fa_icon "frown-o"
-                %span 3
-        %tr
-          %th カテゴリー
-          %td
-            %a{href: "https://www.mercari.com/jp/category/1/"}
-              %div レディース
-            %a{href: "https://www.mercari.com/jp/category/20/"}
-              .item-detail-table-sub-category
-                =fa_icon "angle-right"
-                バッグ
-            %a{href: "https://www.mercari.com/jp/category/214/"}
-              .item-detail-table-sub-sub-category
-                %i.fa.fa-angle-right
-                =fa_icon "angle-left"
-        %tr
-          %th ブランド
-          %td
-            %a{href: "https://www.mercari.com/jp/brand/539/"}
-              %div
-                コーチ
-        %tr
-          %th 商品の状態
-          %td やや傷や汚れあり
-        %tr
-          %th 配送料の負担
-          %td 送料込み(出品者負担)
-        %tr
-          %th 配送の方法
-          %td らくらくメルカリ便
-        %tr
-          %th 配送元地域
-          %td
-            %a{href: "https://www.mercari.com/jp/area/28/"} 兵庫県
-        %tr
-          %th 発送日の目安
-          %td 1~2日で発送
-  .item-price-box.text-center
-    %span.item-price.bold ¥ 3,380
-    %span.item-tax (税込)
-    %span.item-shipping-fee 送料込み
-  .item-buy-btn.f18-24 購入画面に進む
-  .item-description.f14-18
-    %p.item-description-inner
-      ■商品ご覧頂き、誠にありがとうございます。
-      ※今だけ、フォロワーになって下さった方に、300円のお値引きサービス中！！
+    .item-buy-btn.f18-24 購入画面に進む
+    .item-description.f14-18
+      %p.item-description-inner
+        ■商品ご覧頂き、誠にありがとうございます。
+        ※今だけ、フォロワーになって下さった方に、300円のお値引きサービス中！！
+        /
+        私の商品検索は、
+        \#Boon・バッグ　
+        検索してください。
+        /
+        質問がありましたらコメントでよろしくお願いします！
+        ■ 商品説明 ■
+        まずはプロフを確認してください☆
+        /
+        ■ 商品詳細 ■
+        シンプルな落ち着いたお色味でどんな場面にも合い、
+        どんな服にも合わせやすいお鞄です。使用感有！角擦れはございませんが
+        多少の汚れはあります。内側はとても綺麗です☆
+        使わなくなったのでどなたか使っていただける方お願いします。
+        製造番号　H2K-9294
+        /
+        【ブランド】
+        COACH　コーチ
+        /
+        【商品名】
+        コーチ大き目シンプル
+        /
+        【仕様】
+        外ポケット１　内ポケット４
+        /
+        【サイズ】
+        縦：32
+        横：31
+        幅：7
+        紐：130 多少調節可能
+        /
+        ＊他にも数多くの商品を出品しているので、ぜひご覧ください。
+        ＊複数購入、お取り置き(５日まで)もできるので、お気軽にお声がけくださいませ。
+        ＊中古品になりますので、予めご理解いただきますよう、お願い致します^_^
+        ※自宅保管、素人検品、素人寸法の誤差などにご理解がない方、神経質な方、完璧な物が欲しい方は購入お控えください。
+        、お願い致します^_^
+        ※自宅保管、素人検品、素人寸法の誤差などにご理解がない方、神経質な方、完璧な物が欲しい方は購入お控えください。
 
-      私の商品検索は、
-      \#Boon・バッグ　
-      検索してください。
+        \#シンプル #かわいい #大き目 #かばん #バッグ
+    .item-button-container.clearfix
+      .item-button-left
+        %a.item-button.item-button-like{href: "https://www.mercari.com/jp/login/?login_callback=https://item.mercari.com/jp/m70068440240/&login_message=like"}
+          =fa_icon "heart-o"
+          %span いいね!
+          %span{"data-num": "like"} 7
+        %a.item-button.item-button-report.clearfix{href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Freport%2Fm70068440240%2F"}
+          =fa_icon "flag-o"
+          %span 不適切な商品の報告
+      .item-button-right
+        %a{href: "https://www.mercari.com/jp/safe/description/", target: "_blank"}
+          =fa_icon "lock"
+          %span あんしん・あんぜんへの取り組み
 
-      質問がありましたらコメントでよろしくお願いします！
-      ■ 商品説明 ■
-      まずはプロフを確認してください☆
+  //message
+  .item-detail-message
+    .message-container
+      = render "items/messages"
 
-      ■ 商品詳細 ■
-      シンプルな落ち着いたお色味でどんな場面にも合い、
-      どんな服にも合わせやすいお鞄です。使用感有！角擦れはございませんが
-      多少の汚れはあります。内側はとても綺麗です☆
-      使わなくなったのでどなたか使っていただける方お願いします。
-      製造番号　H2K-9294
+  //link
+  %ul.nav-item-link-prev-next.clearfix
+    %li.nav-item-link-prev
+      %a{href: "https://item.mercari.com/jp/m96620691686/"}
+        %i.fa.fa-angle-left.fa-2x
+        ディズニーヴィランズ 2個セット バッジ バッチ Villains 2018
+    %li.nav-item-link-next
+      %a{href: "https://item.mercari.com/jp/m20460146592/"}
+        バーにかかってきた電話/東 直己
+        %i.fa.fa-angle-right.fa-2x
 
-      【ブランド】
-      COACH　コーチ
+  //sns
+  .item-social-media-box
+    .text-center
+    %ul.social-media-box
+      %li
+        %a.share-btn
+          =fa_icon "facebook-official"
+      %li
+        %a.share-btn
+          =fa_icon "twitter"
+      %li
+        %a.share-btn
+          =fa_icon "pinterest"
 
-      【商品名】
-      コーチ大き目シンプル
-
-      【仕様】
-      外ポケット１　内ポケット４
-
-      【サイズ】
-      縦：32
-      横：31
-      幅：7
-      紐：130 多少調節可能
-
-      ＊他にも数多くの商品を出品しているので、ぜひご覧ください。
-      ＊複数購入、お取り置き(５日まで)もできるので、お気軽にお声がけくださいませ。
-      ＊中古品になりますので、予めご理解いただきますよう、お願い致します^_^
-      ※自宅保管、素人検品、素人寸法の誤差などにご理解がない方、神経質な方、完璧な物が欲しい方は購入お控えください。
-      、お願い致します^_^
-      ※自宅保管、素人検品、素人寸法の誤差などにご理解がない方、神経質な方、完璧な物が欲しい方は購入お控えください。
-
-      \#シンプル #かわいい #大き目 #かばん #バッグ
-  .item-button-container.clearfix
-    .item-button-left
-      %a.item-button.item-button-like{href: "https://www.mercari.com/jp/login/?login_callback=https://item.mercari.com/jp/m70068440240/&login_message=like"}
-        =fa_icon "heart-o"
-        %span いいね!
-        %span{"data-num": "like"} 7
-      %a.item-button.item-button-report.clearfix{href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Freport%2Fm70068440240%2F"}
-        =fa_icon "flag-o"
-        %span 不適切な商品の報告
-    .item-button-right
-      %a{href: "https://www.mercari.com/jp/safe/description/", target: "_blank"}
-        =fa_icon "lock"
-        %span あんしん・あんぜんへの取り組み
-
-//message
-.item-detail-message
-  .message-container
-    = render "items/messages"
-
-//link
-%ul.nav-item-link-prev-next.clearfix
-  %li.nav-item-link-prev
-    %a{href: "https://item.mercari.com/jp/m96620691686/"}
-      %i.fa.fa-angle-left.fa-2x
-      ディズニーヴィランズ 2個セット バッジ バッチ Villains 2018
-  %li.nav-item-link-next
-    %a{href: "https://item.mercari.com/jp/m20460146592/"}
-      バーにかかってきた電話/東 直己
-      %i.fa.fa-angle-right.fa-2x
-
-//sns
-.item-social-media-box
-  .text-center
-  %ul.social-media-box
-    %li
-      %a.share-btn
-        =fa_icon "facebook-official"
-    %li
-      %a.share-btn
-        =fa_icon "twitter"
-    %li
-      %a.share-btn
-        =fa_icon "pinterest"
-
-//other items
-.items-in-user-profile
-  %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
-    %h2.items-box-head
-      %a{:href => "https://www.mercari.com/jp/u/387561164/"} DPS(ぶーん)@カウントダウンTVさんのその他の出品
-    = render "items/other-items"
+  //other items
+  .items-in-user-profile
+    %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
+      %h2.items-box-head
+        %a{:href => "https://www.mercari.com/jp/u/387561164/"} DPS(ぶーん)@カウントダウンTVさんのその他の出品
+      = render "items/other-items"
