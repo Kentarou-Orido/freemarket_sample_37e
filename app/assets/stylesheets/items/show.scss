@@ -403,15 +403,24 @@
       }
 
       &-left {
+        a {
+        color: $black;
+        }
+
       @media screen and (min-width: 768px) {
         float: left;
         }
       }
 
       &-right {
-       margin: 16px 0 0;
+        margin: 16px 0 0;
+
+        a {
+        color: $black;
+        }
+
        @media screen and (min-width: 768px) {
-         margin: 8px 0 0;
+        margin: 8px 0 0;
         float: right;
         }
       }
