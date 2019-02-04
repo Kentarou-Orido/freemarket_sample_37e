@@ -1,0 +1,37 @@
+.single-container
+  %header.single-header
+    %h1
+      = link_to '/' do
+        = image_tag '/assets/default-header-logo.svg'
+
+  %main.single-main
+    %section.l-single-container.buy-item-container
+      #sell-container
+        .sell-container-inner
+          %h2.l-single-head 商品情報の入力
+          .sell-form
+            .sell-upload-box
+              %h3.sell-upload-head
+                出品画像
+                %span.form-require 必須
+              %p 最大10枚までアップロードできます
+              .sell-dropbox-container.clearfix.state-image-number-10
+                .sell-upload-items-container
+                  .sell-upload-items.have-item-0
+                    %ul
+                .sell-upload-drop-box.have-item-0
+                  %input.sell-upload-drop-file{type: 'file', name: 'image1'}
+                  %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+            .sell-content
+              .form-group
+                %label
+                  商品名
+                  %span.form-require 必須
+                %div
+                  %input.input-default{placeholder: '商品名（必須 40文字まで）'}
+              .form-group
+                %label
+                  商品の説明
+                  %span.form-require 必須
+                %textarea.textarea-default{placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
+  %footer.single-footer
