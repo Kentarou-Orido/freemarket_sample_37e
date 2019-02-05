@@ -1,14 +1,13 @@
-!!!
-%html
-  %head
-    %meta{charaset: "UFT-8"}
-    %title mercari
-
-
-  %body
-    = render "default/default-header"
-
-    .top_banner
-    .body
-      .main
-    = render "default/default-footer"
+.default-countainer
+  = render "default/default-header"
+  #main.white
+    #section.top-carousel
+      .owl-stage-outer
+        .owl-stage
+          .owl-item
+            %a.top-banner
+    .owl-nav
+      .owl-prev
+      .owl-next
+    .owl-dots
+  = render "default/default-footer"
