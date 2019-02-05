@@ -1,8 +1,9 @@
+@import "modules/default/default-footer";
+@import "modules/default/default-header";
 @import "font-awesome";
 @import "./reset";
 @import "config/variable";
 @import "mixin/clearfix";
-@import "modules/default/default-header";
 @import "./users";
 @import "items/*";
 @import "./identifications";
