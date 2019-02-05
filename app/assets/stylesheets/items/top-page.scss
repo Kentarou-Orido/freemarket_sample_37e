@@ -9,9 +9,11 @@
   position: relative;
   height: 390px;
   width: 100%;
+  display: block;
 }
 
 .owl {
+
   &-stage {
     position: relative;
 
@@ -24,7 +26,7 @@
   &-item {
     height: 390px;
     width: 100%;
-    background-image: url(banner-bokurano-heisei.jpg);
+    background-image: image-url("banner-bokurano-heisei.jpg");
   }
 
   &-nav {
@@ -33,39 +35,22 @@
   }
 
   &-prev {
-    background-image: url(carousel-prev.png);
+    background-image: image-url("carousel-prev.png");
     cursor: pointer;
     height: 46px;
     width: 31px;
     position: absolute;
-    top: .owl {
-  &-stage {
-    position: relative;
-
-    &-outer {
-      position: relative;
-      overflow: hidden;
-    }
+    top: 35%;
+    left: 60px;
   }
 
-  &-item {
-    height: 390px;
-    width: 100%;
-    background-image: url(banner-bokurano-heisei.jpg);
-  }
-
-  &-nav {
-    color: transparent;
-    display: block;
-  }
-
-  &-prev {
-    background-image: url(carousel-prev.png);
+  &-next {
+    background-image: image-url("carousel-next.png");
     cursor: pointer;
     height: 46px;
     width: 31px;
     position: absolute;
-    top: 50px;
+    top: 35%;
+    right: 60px;
   }
 }
-
