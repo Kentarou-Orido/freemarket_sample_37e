@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resource :profile,:identification, only: [:show]
   end
   resource :logout, only: [:show]
-  resource :items, only: [:show]
+  resource :items, only: [:show, :index]
 end
