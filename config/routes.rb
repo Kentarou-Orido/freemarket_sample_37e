@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   resource :logout, only: [:show]
   resource :items, only: [:show]
-  resource :logins, only: [:show]
+  resource :signups, only: [:show]
 end
