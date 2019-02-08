@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resource :logout, only: [:show]
   resource :items, only: [:show]
   resource :signups, only: [:show]
+  resource :logins, only: [:show]
 end
