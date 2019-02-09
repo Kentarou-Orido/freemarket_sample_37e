@@ -6,8 +6,7 @@ Rails.application.routes.draw do
     resource :profile,:identification, only: [:show]
     resources :cards, only: [:index, :new]
   end
-  resource :logout, only: [:show]
+  resource :signups, :logins [:show]
+  resource :logout,:sell, only: [:show]
   resource :items, only: [:show, :index, :buy]
-  resource :signups, only: [:show]
-  resource :logins, only: [:show]
 end
