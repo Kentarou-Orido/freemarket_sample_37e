@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :cards, only: [:index, :new]
   end
   resource :logout,:sell, only: [:show]
-  resource :items, only: [:show, :index]
+  resource :items, only: [:show, :index, :buy]
 end
