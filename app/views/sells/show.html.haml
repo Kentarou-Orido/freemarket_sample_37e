@@ -9,31 +9,32 @@
       #sell-container
         .sell-container-inner
           %h2.l-single-head 商品情報の入力
-          .sell-form
+          = form_for @item, url: {controller: 'sells', action: 'create'}, html: {class: 'sell-form'} do |f|
             .sell-upload-box
               %h3.sell-upload-head
                 出品画像
                 %span.form-require 必須
               %p 最大10枚までアップロードできます
               .sell-dropbox-container.clearfix.state-image-number-10
-                .sell-upload-items-container
-                  .sell-upload-items.have-item-0
-                    %ul
-                %label.sell-upload-drop-box.have-item-0
-                  %input.sell-upload-drop-file{type: 'file', name: 'image1'}
-                  %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+                = f.fields_for :image, html: {class: 'sell-dropbox-container clearfix state-image-number-10'} do |i|
+                  .sell-upload-items-container
+                    .sell-upload-items.have-item-0
+                      %ul
+                  = i.label :image, class: 'sell-upload-drop-box have-item-0' do
+                    = i.file_field :image, class: 'sell-upload-drop-file', name: 'image1'
+                    %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
             .sell-content
               .form-group
                 %label
                   商品名
                   %span.form-require 必須
                 %div
-                  %input.input-default{placeholder: '商品名（必須 40文字まで）'}
+                  = f.text_field :name, class: 'input-default', placeholder: '商品名（必須 40文字まで）'
               .form-group
                 %label
                   商品の説明
                   %span.form-require 必須
-                %textarea.textarea-default{placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
+                = f.text_area :text, class: 'textarea-default', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
             .sell-content.clearfix
               %h3.sell-sub-head 商品の詳細
               .sell-form-box
@@ -41,9 +42,9 @@
                   %label
                     カテゴリー
                     %span.form-require 必須
-                  %div
-                    .select-wrap
-                      %select.select-default
+                  .select-wrap
+                    = f.fields_for :category do |u|
+                      = u.select :name, {}, {}, {class: 'select-default'} do
                         %option{value: ''} ---
                         %option{value: '1'} レディース
                         %option{value: '2'} メンズ
@@ -65,7 +66,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
+                      = f.select :item_condition, {}, {}, {class: 'select-default'} do
                         %option{value: ''} ---
                         %option{value: '1'} 新品、未使用品
                         %option{value: '2'} 未使用に近い
@@ -84,10 +85,28 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
+                      = f.select :postage, {}, {}, {class: 'select-default'} do
                         %option{value: ''} ---
                         %option{value: '2'} 送料込み（出品者負担）
                         %option{value: '1'} 着払い（購入者負担）
+                      = fa_icon 'angle-down'
+                .form-group
+                  %label
+                    配送の方法
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      = f.select :shipping_method, {}, {}, {class: 'select-default'} do
+                        %option{value: ''} ---
+                        %option{value: '5'} 未定
+                        %option{value: '14'} らくらくメルカリ便
+                        %option{value: '6'} ゆうメール
+                        %option{value: '8'} レターパック
+                        %option{value: '9'} 普通郵便（定形、定形外）
+                        %option{value: '10'} クロネコヤマト
+                        %option{value: '11'} ゆうパック
+                        %option{value: '13'} クリックポスト
+                        %option{value: '7'} ゆうパケット
                       = fa_icon 'angle-down'
                 .form-group
                   %label
@@ -95,7 +114,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
+                      = f.select :area, {}, {}, {class: 'select-default'} do
                         %option{value: ''} ---
                         %option{value: '1'} 北海道
                         %option{value: '2'} 青森県
@@ -171,7 +190,7 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          %input.input-default{placeholder: '例）300'}
+                          = f.text_field :price, class: 'input-default', placeholder: '例）300'
                   %li.clearfix
                     .l-left
                       販売手数料(10%)
@@ -197,8 +216,7 @@
                   また、出品をもちまして
                   = link_to '加盟店規約', 'https://www.mercari.com/jp/seller_terms/'
                   に同意したことになります。
-              .btn-default.btn-red
-                出品する
+              = f.submit '出品する', class: 'btn-default btn-red'
               = link_to 'もどる', '/users', class: 'btn-default btn-gray'
   %footer.single-footer
     %nav

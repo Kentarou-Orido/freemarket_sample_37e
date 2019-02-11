@@ -4,4 +4,6 @@ class Item < ApplicationRecord
   has_many :images
   has_many :categories
   has_many :brands
+  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :categories
 end

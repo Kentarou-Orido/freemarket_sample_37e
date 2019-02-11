@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190124105908) do
+ActiveRecord::Schema.define(version: 20190211114611) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name"
@@ -19,9 +19,17 @@ ActiveRecord::Schema.define(version: 20190124105908) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",     null: false
-    t.string "ancestry"
+    t.string  "name",     null: false
+    t.string  "ancestry"
+    t.integer "item_id"
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+    t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "image_url"
+    t.integer "item_id",   null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -66,5 +74,7 @@ ActiveRecord::Schema.define(version: 20190124105908) do
   end
 
   add_foreign_key "brands", "items"
+  add_foreign_key "categories", "items"
+  add_foreign_key "images", "items"
   add_foreign_key "items", "users"
 end

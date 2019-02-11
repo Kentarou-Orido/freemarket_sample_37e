@@ -399,6 +399,13 @@ a {
       }
     }
   }
+
+  &-modal {
+    &-body {
+      border-top: 1px solid #eee;
+      padding: 40px;
+    }
+  }
 }
 
 .btn {
