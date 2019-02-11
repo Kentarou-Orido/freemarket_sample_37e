@@ -1,9 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    # binding.pry
-    # item = Item.find(params[:id])
-    # @category = item.categories
+
   end
 
   def show
@@ -13,4 +11,8 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:name)
     end
+
+  def buy
+  end
+
 end
