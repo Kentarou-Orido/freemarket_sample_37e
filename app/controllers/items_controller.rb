@@ -1,18 +1,17 @@
 class ItemsController < ApplicationController
 
+
   def index
+
+    @items = Item.all
+    @categories = Category.all
+    # binding.pry
 
   end
 
   def show
   end
 
-  private
-    def item_params
-      params.require(:item).permit(:name)
-    end
-
   def buy
   end
-
 end
