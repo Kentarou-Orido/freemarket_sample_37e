@@ -18,6 +18,9 @@
 ## Association
 - has_many:items
 - has_many:addresses
+- has_many:buyed_items,foreign_key:'buyer_id', class_name:'Item'
+- has_many:saling_items, -> {'where('buyer_id NULL')'}, foreign_key:'saler_id', class_name:'Item'
+- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -35,9 +38,13 @@
 |shipping_method|integer|null:false|
 |size|string||
 |text|text|null:false|
+|seller_id|references|foreign_key|
+|buyer_id|references|foreign_key|
 
 ## Association
 - belongs_to:user
+- belongs_tp:seller,class_name:'User'
+- belongs_tp:buyer,class_name:'User'
 - has_many:comments
 - has_many:images
 - has_many:categories

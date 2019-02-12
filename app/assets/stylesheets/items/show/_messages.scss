@@ -1,0 +1,174 @@
+.items#show {
+  //message
+  .item-detail-message {
+    margin: 8px auto;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 768px) {
+      width: 700px;
+    }
+  }
+
+  .message {
+    &-content {
+      padding: 24px 7.5%;
+      background: $white;
+
+      @media screen and (min-width: 768px) {
+        padding: 24px;
+      }
+    }
+
+    &-items {
+      margin: 0;
+
+      & li{
+        margin: 60px 0 0;
+
+        &:first-child {
+          margin: 1.5em 0 0;
+        }
+      }
+
+      .clearfix{
+        @include clearfix;
+      }
+    }
+
+    &-user {
+      float: left;
+      position: relative;
+      top: -20px;
+      display: inline-block;
+      color: $black;
+
+      figure>div {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+
+      &-unknown {
+        background: $medium-gray;
+        text-align: center;
+
+        img{
+          width: 32px;
+          height: 32px;
+          margin: 10px 0 0;
+          vertical-align: bottom;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      figcaption {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 56px;
+        max-width: 100%;
+        min-width: 214px;
+        height: 1.2em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &-body {
+      box-sizing: border-box;
+      float: right;
+      position: relative;
+      width: calc(100% - 56px);
+      padding: 16px;
+      background: $light-gray;
+      border-radius: 15px;
+      line-height: 1.5;
+      word-break: break-all;
+
+      &-text {
+        font-size: 13px;
+      }
+
+      .icon-balloon {
+        position: absolute;
+        top: 8px;
+        left: -9px;
+        color: $light-gray;
+      }
+
+      @media screen and (min-width: 768px) {
+        width: 600px;
+      }
+    }
+
+    &-icons {
+      margin: 8px 0 0;
+
+      time {
+        display: block;
+        color: $pearl-gray;
+      }
+
+      i,span {
+        vertical-align: middle;
+      }
+
+      a,div {
+        display: inline-block;
+        color: $pearl-gray;
+        text-decoration: none;
+      }
+
+      div {
+        cursor: pointer;
+      }
+    }
+
+    &-icon {
+      &-right {
+        float:right;
+
+        form {
+          display: inline;
+        }
+
+        button {
+          background-color: transparent;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+          color: inherit;
+        }
+      }
+
+      &-left {
+        float: left;
+      }
+    }
+    &-form {
+      box-sizing: inherit;
+      p {
+        padding: 8px;
+        font-size: 14px;
+        background: $light-yellow;
+      }
+      & .textarea-default {
+        margin: 8px 0 0;
+      }
+    }
+    &-submit {
+      width: 100%;
+      margin: 8px 0 0;
+      font-size: 0;
+      text-align: center;
+      span {
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
