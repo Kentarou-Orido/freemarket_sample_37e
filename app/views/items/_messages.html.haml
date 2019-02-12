@@ -101,3 +101,9 @@
               %button{type: "submit"}
                 %i.fa.fa-flag-o
               %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}
+.message-content
+  =form_tag "",class: "message-form", method:"POST"
+  %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  %textarea.textarea-default{name: "body", type: "text", value: ""}
+  %button.message-submit.btn-default.btn-gray
+    %span コメントする
