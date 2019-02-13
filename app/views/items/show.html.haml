@@ -41,7 +41,7 @@
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
       %section.visible-sp
-        .item-buy-btn.f18-24 購入画面に進む
+        = link_to "購入画面に進む",purchase_items_path(@item),class: "item-buy-btn f18-24"
       %table.item-detail-table
         %tbody
           %tr
@@ -97,7 +97,7 @@
       %span.item-price.bold ¥ 3,380
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
-    .item-buy-btn.f18-24 購入画面に進む
+    = link_to "購入画面に進む",purchase_items_path(@item),class: "item-buy-btn f18-24"
     .item-description.f14-18
       %p.item-description-inner
         ■商品ご覧頂き、誠にありがとうございます。
