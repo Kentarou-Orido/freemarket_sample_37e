@@ -72,13 +72,13 @@
   &-accordion {
     margin: 16px 0 0;
     &.not-have {
-      background:$mediu-mgray;
+      background:$medium-gray;
       & .accordion-toggle {
         cursor: default;
       }
     }
     & .accordion-toggle {
-      border: 1px solid $mediu-mgray;
+      border: 1px solid $medium-gray;
       padding: 16px;
     }
   }
@@ -90,7 +90,7 @@
     }
     &-row {
       display: table-row;
-      border: 1px solid $mediu-mgray;
+      border: 1px solid $medium-gray;
       &:first-child {
         border: 0px;
       }
