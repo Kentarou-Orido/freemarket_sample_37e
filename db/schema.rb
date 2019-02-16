@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 20190211114611) do
     t.text     "text",            limit: 65535, null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "seller_id",                     null: false
+    t.integer  "buyer_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
+    t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 

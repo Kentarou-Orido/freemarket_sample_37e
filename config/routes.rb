@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   end
   resource :logout,:sell, only: [:show, :create]
   resource :items, only: [:show, :index, :buy]
-  resource :signups, :logins [:show]
+  resource :signups, :logins, only: [:show]
 end
