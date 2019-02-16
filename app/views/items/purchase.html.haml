@@ -7,8 +7,8 @@
       .buy-content-inner
         %h3.buy-item-iamge
           = image_tag "m60436790911_1.jpg", class: "is-higher-height lazyloaded"
-        %p.buy-item-name.bold little sunny bite denim pants デニム 新品
-        = form_tag action: :completed_purchase,class: "buy-form", method:"POST" do
+        = form_tag action: :completed_purchase,class: "buy-form", method:"POST", id: @item.id do
+          %p.buy-item-name.bold little sunny bite denim pants デニム 新品
           %p.buy-price-ja.bold
             ¥ 7,800
             %span.item-shipping-fee.f14.bold
@@ -21,7 +21,7 @@
               .buy-price-cell 支払い金額
               .buy-price-cell
                 %span{"data-buy-pay":"7800"} ¥ 7,800
-          %script{class: "payjp-button", "data-key": "#{PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript","data-text": "購入する"}
+          %script.payjp-button{"data-key": "#{PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript","data-text": "購入する"}
 
 
     %section.buy-content.buy-user-info
