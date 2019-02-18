@@ -5,12 +5,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-
   end
 
   def purchase
     @item = Item.find(params[:format])
-   end
+  end
 
   def completed_purchase
     ActiveRecord::Base.transaction do
@@ -22,7 +21,7 @@ class ItemsController < ApplicationController
         card:    params['payjp-token'],
         currency: 'jpy',
       )
-      @item.update(buyer_id: current_user.id)
+      @item.update!(buyer_id: current_user.id)
     end
   end
 end
