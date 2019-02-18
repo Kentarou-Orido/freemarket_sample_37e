@@ -13,14 +13,16 @@ class ItemsController < ApplicationController
    end
 
   def completed_purchase
-    @item = Item.find(params[:id])
-    require 'payjp'
-    Payjp.api_key = PAYJP_SECRET_KEY
-    Payjp::Charge.create(
-      amount:  @item.price,
-      card:    params['payjp-token'],
-      currency: 'jpy',
-    )
-    @item.update!(buyer_id: current_user.id)
+    ActiveRecord::Base.transaction do
+      @item = Item.find(params[:id])
+      require 'payjp'
+      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp::Charge.create(
+        amount:  @item.price,
+        card:    params['payjp-token'],
+        currency: 'jpy',
+      )
+      @item.update(buyer_id: current_user.id)
+    end
   end
 end
