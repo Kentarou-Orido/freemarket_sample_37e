@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   def completed_purchase
     ActiveRecord::Base.transaction do
       require 'payjp'
-      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp.api_key = Rails.application.secrets.payjp_secret_key
       Payjp::Charge.create(
         amount:  @item.price,
         card:    params['payjp-token'],
