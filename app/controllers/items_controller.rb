@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   def index
 
     @items = Item.all
-    @categories = Category.all
-    # binding.pry
+    @categories = Category.find([1,2,3,4])
+
 
   end
 
