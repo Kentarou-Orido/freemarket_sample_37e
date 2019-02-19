@@ -2,8 +2,8 @@
   .items-box {
     &-container {
       height: 442px;
-      width: 940px;
-      margin: 0 250px;
+      max-width: 940px;
+      margin: 0 auto;
 
       a {
         text-decoration: none;
@@ -20,18 +20,17 @@
     &-content {
       margin: 0 auto;
       height: 330px;
-      width: 940px;
+      max-width: 940px;
     }
   }
 
   .text-center {
     text-align: center;
 
-    span {
+    a {
       font-size: 22px;
       font-weight: bold;
       margin: 26px 11px;
-      // color: #0099e8;
     }
   }
 
