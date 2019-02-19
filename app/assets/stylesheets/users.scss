@@ -1,3 +1,9 @@
-.users#show {
-@import "./modules/users/show";
+.users {
+  &#show {
+    @import "./modules/users/show";
+  }
+
+  &#new {
+    @import "./modules/users/new";
+  }
 }
