@@ -1,0 +1,34 @@
+%header.pc-header
+  .pc-header-inner
+    .pc-header-inner__clearfix
+      %h1.l-left
+        = link_to "https://www.mercari.com/jp/" do
+          = image_tag 'default-header-logo.svg', size: "134x36"
+      %form.pc-header-form
+        %input.pc-header-form__input-default{ type: "text", placeholder: "キーワードから探す"}
+        = fa_icon "search"
+    .pc-header-inner__pc-header-nav-box
+      %nav.l-left
+        %ul.pc-header-nav
+          %li
+            %h2
+              = link_to "カテゴリーから探す", "https://www.mercari.com/jp/", class: "pc-header-nav-root"
+          %li
+            %h2
+              = link_to "ブランドから探す", "https://www.mercari.com/jp/", class: "pc-header-nav-root"
+      %div.l-right
+        %ul.pc-header-user-nav
+          %li
+            = link_to "https://www.mercari.com/jp/", class: "sp-header-user-icon" do
+              %figure
+                %div
+                  = image_tag 'member_photo.png'
+              %div マイページ
+          %li
+            = link_to "https://www.mercari.com/jp/", class: "pc-header-nav-root" do
+              = fa_icon "bell"
+              %span お知らせ
+          %li
+            = link_to "https://www.mercari.com/jp/", class: "pc-header-nav-root" do
+              = fa_icon "check"
+              %span やることリスト

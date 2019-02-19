@@ -1,0 +1,20 @@
+.default-container
+  = render partial: "/default/default-header"
+  = render partial: "users/show/bread-crumbs"
+
+  %main.l-container.clearfix
+    .l-content.clearfix
+      %section.l-chapter-container
+        %h2.l-chapter-head プロフィール
+        / = form_for(current_user) do |f|
+        .setting-profile-icon
+          %figure
+            %img{src: '/member_photo_noimage_thumb.png', class: 'setting-profile-icon--image', }
+          %input.input-default{placeholder: 'name'}
+          / = f.text_field :name, autofocus: true
+        .setting-profile-content
+          %textarea.textarea-default{placeholder: '例）こんにちは☆ご覧いただきありがとうございます！可愛いものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に９号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
+          / = f.textarea :content,
+          / = f.submit '変更する', class: 'submit'
+          .btn-default.btn-red 変更する
+    = render partial: "users/show/mypage-side"

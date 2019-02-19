@@ -1,0 +1,59 @@
+.default-container
+  = render partial: "/default/default-header"
+  = render partial: "users/show/bread-crumbs"
+
+  %main.l-container.clearfix
+    .l-content.clearfix
+      .l-chapter-container
+        %h2.l-chapter-head 本人情報の登録
+        %p.text-center お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+        .l-single-inner
+          .form-group
+            %label お名前
+            %span.form-require 必須
+            %input.input-default{placeholder: '例）山田'}
+            %input.input-default{placeholder: '例）彩'}
+          .form-group
+            %label お名前カナ
+            %span.form-require 必須
+            %input.input-default{placeholder: '例）ヤマダ'}
+            %input.input-default{placeholder: '例）アヤ'}
+          .form-group
+            %label 郵便番号
+            %span.form-arbitrary 任意
+            %input.input-default{placeholder: '例）1234567'}
+          .form-group
+            %label 都道府県
+            %span.form-require 必須
+            %input.input-default{placeholder: '北海道'}
+          .form-group
+            %label 市区町村
+            %span.form-require 必須
+            %input.input-default{placeholder: '例）横浜市緑区'}
+          .form-group
+            %label 番地
+            %span.form-require 必須
+            %input.input-default{placeholder: '例）青山1-1-1'}
+          .form-group
+            %label 建物名
+            %span.form-arbitrary 任意
+            %input.input-default{placeholder: '例）柳ビル103'}
+          .form-group
+            %label 生年月日
+            %span.form-require 必須
+            %br
+            .birthday-select-wrap
+              %input.select-wrap{placeholder: '例）1990'}
+              %span 年
+            .birthday-select-wrap
+              %input.select-wrap{placeholder: '例）12'}
+              %span 月
+            .birthday-select-wrap
+              %input.select-wrap{placeholder: '例）25'}
+              %span 日
+            %p.form-info-text ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+          .btn-default.btn-red 変更する
+          .form-group.text-right
+            %p
+              %a{href: ''} 本人情報の登録について
+    = render partial: "users/show/mypage-side"

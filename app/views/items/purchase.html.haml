@@ -1,0 +1,55 @@
+= render "single/single-header"
+
+%main.single-main
+  %section.l-single-container.buy-item-container
+    %h2.l-single-head.bold 購入を確定しますか？
+    %section.buy-content.buy-item
+      .buy-content-inner
+        %h3.buy-item-iamge
+          = image_tag "m60436790911_1.jpg", class: "is-higher-height lazyloaded"
+        = form_tag action: :completed_purchase,class: "buy-form", method:"POST", id: @item.id do
+          %p.buy-item-name.bold little sunny bite denim pants デニム 新品
+          %p.buy-price-ja.bold
+            ¥ 7,800
+            %span.item-shipping-fee.f14.bold
+              送料込み
+          %ul.buy-accordion.not-have
+            %li.accordion-parent
+              .accordion-toggle ポイントはありません
+          %ul.buy-price-table
+            %li.buy-price-row.buy-you-pay.bold
+              .buy-price-cell 支払い金額
+              .buy-price-cell
+                %span{"data-buy-pay":"7800"} ¥ 7,800
+          %script.payjp-button{"data-key": "#{Rails.application.secrets.PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript","data-text": "購入する"}
+
+
+    %section.buy-content.buy-user-info
+      .buy-content-inner
+        %h3.bold 配送先
+        %address.buy-user-info-text
+          〒XXX-XXXX
+          %br
+          東京都 まるまる区
+          まるまる X-X-X
+          %br
+          石野 純
+        %p.buy-user-info-text
+        = link_to "",class: "buy-user-info-fix" do
+          %span 変更する
+          =fa_icon "angle-right"
+    %section.buy-content.buy-user-info
+      .buy-content-inner
+        %h3.bold 支払い方法
+        %p.buy-user-info-text
+          ************XXXX
+          %br
+          XX / XX
+        %figure
+          = image_tag "visa.svg",width: "49", height: "15", alt: "visa"
+
+        = link_to "",class: "buy-user-info-fix" do
+          %span 変更する
+          =fa_icon "angle-right"
+
+= render "single/single-footer"
