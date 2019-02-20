@@ -1,0 +1,9 @@
+.single-container
+  = render "single/single-header"
+
+  .single-between
+    .completed-msg.bold ご購入ありがとうございました。
+    .completed-path
+      = link_to 'トップに戻る', root_path
+
+  = render "single/single-footer"
