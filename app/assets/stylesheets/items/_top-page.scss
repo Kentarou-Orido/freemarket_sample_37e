@@ -26,8 +26,10 @@
 
     &-item {
       height: 390px;
-      width: 100%;
+      width: 100vw;
       background-image: image-url("banner-bokurano-heisei.jpg");
+      background-position: center;
+      overflow: hidden;
     }
 
     &-nav {
