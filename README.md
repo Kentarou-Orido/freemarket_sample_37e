@@ -38,8 +38,8 @@
 |shipping_method|integer|null:false|
 |size|string||
 |text|text|null:false|
-|seller_id|references|foreign_key|
-|buyer_id|references|foreign_key|
+|brand_id|references|null:false, foreign_key|
+|category_id|references|null:false, foreign_key|
 
 ## Association
 - belongs_to:user
