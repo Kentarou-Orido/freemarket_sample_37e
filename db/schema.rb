@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190209060922) do
+ActiveRecord::Schema.define(version: 20190219140313) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "postcode",                    null: false
+    t.string  "prefectures",                 null: false
+    t.string  "municipality",                null: false
+    t.string  "street_number",               null: false
+    t.string  "building_name"
+    t.integer "room_number"
+    t.text    "remarks",       limit: 65535
+    t.integer "user_id",                     null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name"
@@ -39,7 +51,11 @@ ActiveRecord::Schema.define(version: 20190209060922) do
     t.datetime "updated_at",                    null: false
     t.integer  "seller_id",                     null: false
     t.integer  "buyer_id"
+    t.integer  "brand_id",                      null: false
+    t.integer  "category_id",                   null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
@@ -69,6 +85,9 @@ ActiveRecord::Schema.define(version: 20190209060922) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
 end

@@ -19,7 +19,15 @@ html{
     TODO test putting a class on HEAD.
         - Fails on FF.
 */
-body,
+body {
+  position: relative;
+  min-height: 100%;
+  background: $light-gray;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: $black;
+  line-height: 1;
+}
 div,
 dl,
 dt,
@@ -123,5 +131,11 @@ select {
 legend {
     color:#000;
 }
+
+a {
+    color: $light-blue;
+    text-decoration: none;
+}
+
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
