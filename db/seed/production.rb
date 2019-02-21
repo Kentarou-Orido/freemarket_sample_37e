@@ -1,1 +1,0 @@
-Item.create(id: "1", name: "激安！ルイビトンのカバン❤", price: "100", user_id: "1", trade_status: "1", item_condition: "1", postage: "100", area: "東京都", shipping_method: "1", size: "m", text: "やすいよ〜", created_at: "2019-02-21 23:00:00", updated_at: "2019-02-21 23:00:00", seller_id: "1", buyer_id: NULL)
