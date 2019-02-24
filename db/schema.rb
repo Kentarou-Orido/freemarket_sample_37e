@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190223105733) do
+ActiveRecord::Schema.define(version: 20190224043247) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "postcode",                    null: false
@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 20190223105733) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
     t.integer  "price",                         null: false
-    t.integer  "user_id",                       null: false
     t.integer  "trade_status",                  null: false
     t.integer  "item_condition",                null: false
     t.string   "postage",                       null: false
@@ -84,11 +83,10 @@ ActiveRecord::Schema.define(version: 20190223105733) do
     t.datetime "updated_at",                    null: false
     t.integer  "seller_id",                     null: false
     t.integer  "buyer_id"
-    t.integer  "delivery_method"
-    t.integer  "delivery_burden"
+    t.string   "delivery_method",               null: false
+    t.string   "delivery_burden",               null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
-    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -115,5 +113,4 @@ ActiveRecord::Schema.define(version: 20190223105733) do
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "users"
 end

@@ -36,8 +36,8 @@
 |postage|string|null:false|
 |area|sting|null:false|
 |shipping_method|integer|null:false|
-|delivery_method|integer|null:false|
-|delivery_burden|integer|null:false|
+|delivery_method|string|null:false|
+|delivery_burden|string|null:false|
 |size|string||
 |text|text|null:false|
 |brand_id|references|null:false, foreign_key|
