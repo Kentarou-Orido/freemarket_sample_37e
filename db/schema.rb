@@ -51,11 +51,6 @@ ActiveRecord::Schema.define(version: 20190223105733) do
     t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
   end
 
-<<<<<<< HEAD
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "image_url"
-    t.integer "item_id",   null: false
-=======
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                  null: false
     t.integer  "item_id",                  null: false
@@ -71,7 +66,6 @@ ActiveRecord::Schema.define(version: 20190223105733) do
     t.string   "image_url",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> Kentarou-Orido/master
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
@@ -116,13 +110,10 @@ ActiveRecord::Schema.define(version: 20190223105733) do
   end
 
   add_foreign_key "brands", "items"
-<<<<<<< HEAD
   add_foreign_key "categories", "items"
-=======
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
->>>>>>> Kentarou-Orido/master
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
 end
