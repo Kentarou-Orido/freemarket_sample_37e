@@ -85,7 +85,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :postage, {}, {}, {class: 'select-default'} do
+                      = f.select :delivery_burden, {}, {}, {class: 'select-default'} do
                         %option{value: ''} ---
                         %option{value: '2'} 送料込み（出品者負担）
                         %option{value: '1'} 着払い（購入者負担）
@@ -171,7 +171,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
+                      = f.select :delovery_date, {}, {}, {class: 'select-default'} do
                         %option{value: ''} ---
                         %option{value: '1'} 1~2日で発送
                         %option{value: '2'} 2~3日で発送
