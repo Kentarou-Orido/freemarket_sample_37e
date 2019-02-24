@@ -28,14 +28,16 @@
 |id|integer|null:false|
 |name|string|null:false|
 |price|integer|null:false|
-|user_id|references|null:false, foreign_key: true|
-<!-- |buyer_id|references|null:false, foreign_key: true| -->
-<!-- |brand|sting|| -->
+|buyer_id|references|null:false, foreign_key: true|
+|seller_id|references|null:false, foreign_key: true|
+|brand|sting|
 |trade_status|integer|null:false|
 |item_condition|integer|null:false|
 |postage|string|null:false|
 |area|sting|null:false|
 |shipping_method|integer|null:false|
+|delivery_method|integer|null:false|
+|delivery_burden|integer|null:false|
 |size|string||
 |text|text|null:false|
 |brand_id|references|null:false, foreign_key|
@@ -57,7 +59,7 @@
 |user_id|references|null:false, foreign_key: true|
 |name|string|null:false|
 |card_number|integer|null:false|
-|expiration_data|data|null:false|
+|expiration_date|date|null:false|
 |security_code|integer|null:false|
 
 ## Association
@@ -71,6 +73,9 @@
 |municipality|string|null:false|
 |street_number|string|null:false|
 |building_name|string||
+|room_number|integer||
+|remarks|text||
+|user_id|references|null:false, foreign_key: true|
 
 ## Association
 - belongs_to:user
