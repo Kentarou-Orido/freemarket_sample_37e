@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190209060922) do
+ActiveRecord::Schema.define(version: 20190220062736) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "postcode",                    null: false
+    t.string  "prefectures",                 null: false
+    t.string  "municipality",                null: false
+    t.string  "street_number",               null: false
+    t.string  "building_name"
+    t.integer "room_number"
+    t.text    "remarks",       limit: 65535
+    t.integer "user_id",                     null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name"
@@ -19,9 +31,11 @@ ActiveRecord::Schema.define(version: 20190209060922) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",     null: false
-    t.string "ancestry"
+    t.string  "name",     null: false
+    t.string  "ancestry"
+    t.integer "item_id",  null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+    t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -69,6 +83,7 @@ ActiveRecord::Schema.define(version: 20190209060922) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
   add_foreign_key "items", "users"
 end

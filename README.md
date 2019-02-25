@@ -10,7 +10,7 @@
 |family_name_kana|string|null:false|
 |first_name_kana|string|null:false|
 |encrypted_password|string|null:false, unique: true|
-|telephone|string||
+|telephone|string|null:false, unique: true|
 |birthday|data|null:false, unique: true|
 |icon|string|unique: true|
 |email|string|null:false|
@@ -40,6 +40,8 @@
 |text|text|null:false|
 |seller_id|references|foreign_key|
 |buyer_id|references|foreign_key|
+|brand_id|references|null:false, foreign_key: true|
+|category_id|references|null:false, foreign_key: true|
 
 ## Association
 - belongs_to:user
@@ -71,6 +73,9 @@
 |municipality|string|null:false|
 |street_number|string|null:false|
 |building_name|string||
+|room_number|integer||
+|remarks|text||
+|user_id|references|null:false, foreign_key: true|
 
 ## Association
 - belongs_to:user
@@ -120,3 +125,9 @@
 
 ### itemsテーブルに関して
 buyer_idカラムとbrandカラムを削除
+
+### addressesテーブルに関して
+room_numberカラムとremarksカラムとuser_idカラムの追加
+
+### usersテーブルに関して
+telephoneカラムにnull: falseオプションとユニークオプション追加

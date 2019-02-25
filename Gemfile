@@ -65,3 +65,4 @@ gem 'devise'
 gem 'ancestry'
 gem 'font-awesome-rails'
 gem 'rb-readline'
+gem "recaptcha", require: "recaptcha/rails"
