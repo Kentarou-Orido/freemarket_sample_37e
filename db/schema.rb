@@ -78,10 +78,6 @@ ActiveRecord::Schema.define(version: 20190223105733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
