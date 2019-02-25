@@ -259,7 +259,7 @@
         line-height: 60px;
       }
 
-      .f18-24 {
+      &.f18-24 {
         font-size: 18px;
 
         @media screen and (min-width: 768px) {
@@ -432,7 +432,7 @@
   }
 
   //sns
-  .itme-social-media-box {
+  .item-social-media-box {
     margin: 24px 0 0;
     background: $white;
     padding: 16px 0 8px;

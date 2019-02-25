@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190220062736) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -21,6 +22,21 @@ ActiveRecord::Schema.define(version: 20190220062736) do
     t.integer "room_number"
     t.text    "remarks",       limit: 65535
     t.integer "user_id",                     null: false
+=======
+ActiveRecord::Schema.define(version: 20190223105733) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "postcode",                    null: false
+    t.string   "prefectures",                 null: false
+    t.string   "municipality",                null: false
+    t.string   "street_number",               null: false
+    t.string   "building_name"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "room_number"
+    t.text     "remarks",       limit: 65535
+    t.integer  "user_id",                     null: false
+>>>>>>> master
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
@@ -30,12 +46,44 @@ ActiveRecord::Schema.define(version: 20190220062736) do
     t.index ["item_id"], name: "index_brands_on_item_id", using: :btree
   end
 
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",         null: false
+    t.string   "name",            null: false
+    t.integer  "card_number",     null: false
+    t.date     "expiration_date", null: false
+    t.integer  "security_code",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
+  end
+
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name",     null: false
     t.string  "ancestry"
     t.integer "item_id",  null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
     t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
+<<<<<<< HEAD
+=======
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                  null: false
+    t.integer  "item_id",                  null: false
+    t.text     "text",       limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["item_id"], name: "index_comments_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.string   "image_url",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+>>>>>>> master
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -53,16 +101,11 @@ ActiveRecord::Schema.define(version: 20190220062736) do
     t.datetime "updated_at",                    null: false
     t.integer  "seller_id",                     null: false
     t.integer  "buyer_id"
+    t.integer  "delivery_method"
+    t.integer  "delivery_burden"
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
-  end
-
-  create_table "tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_tests_on_name", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -85,5 +128,9 @@ ActiveRecord::Schema.define(version: 20190220062736) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
+  add_foreign_key "cards", "users"
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
+  add_foreign_key "images", "items"
   add_foreign_key "items", "users"
 end

@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     resources :addresses, only: [:new]
   end
   resources :logout,:sell, only: [:show]
-  resources :items, only: [:show, :index, :buy]
-  resources :signups, :logins, only: [:show]
+  resources :items, only: [:index, :show] do
+    collection do
+      get 'purchase'
+      post 'completed_purchase'
+    end
+  end
+  resource :signups, logins: [:show]
 end
