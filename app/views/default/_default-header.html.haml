@@ -15,7 +15,7 @@
               = link_to "カテゴリーから探す", "https://www.mercari.com/jp/", class: "pc-header-nav-root"
           %li
             %h2
-              = link_to "ブランドから探す", "https://www.mercari.com/jp/", class: "pc-header-nav-root"
+              = link_to "ブランドから探す", destroy_user_session_path, method: :delete, class: "pc-header-nav-root"
       %div.l-right
         %ul.pc-header-user-nav
           %li
