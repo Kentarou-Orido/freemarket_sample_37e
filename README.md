@@ -40,7 +40,6 @@
 |delivery_burden|integer|null:false|
 |size|string||
 |text|text|null:false|
-<<<<<<< HEAD
 |seller_id|references|foreign_key|
 |buyer_id|references|foreign_key|
 |brand_id|references|null:false, foreign_key: true|

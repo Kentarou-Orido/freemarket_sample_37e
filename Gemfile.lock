@@ -108,8 +108,11 @@ GEM
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
 <<<<<<< HEAD
+<<<<<<< HEAD
     i18n (1.5.3)
 =======
+=======
+>>>>>>> master
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.5.1)
@@ -148,6 +151,9 @@ GEM
 =======
     net-ssh (5.0.2)
     netrc (0.11.0)
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
     nio4r (2.3.1)
     nokogiri (1.10.1)
@@ -228,6 +234,9 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
     ruby_parser (3.12.0)
       sexp_processor (~> 4.9)
@@ -313,7 +322,11 @@ DEPENDENCIES
   rails-controller-testing
   rb-readline
 <<<<<<< HEAD
+<<<<<<< HEAD
   recaptcha
+=======
+  rspec-rails
+>>>>>>> master
 =======
   rspec-rails
 >>>>>>> master

@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190220062736) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -23,6 +24,8 @@ ActiveRecord::Schema.define(version: 20190220062736) do
     t.text    "remarks",       limit: 65535
     t.integer "user_id",                     null: false
 =======
+=======
+>>>>>>> master
 ActiveRecord::Schema.define(version: 20190223105733) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -36,6 +39,9 @@ ActiveRecord::Schema.define(version: 20190223105733) do
     t.integer  "room_number"
     t.text     "remarks",       limit: 65535
     t.integer  "user_id",                     null: false
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
@@ -64,7 +70,10 @@ ActiveRecord::Schema.define(version: 20190223105733) do
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
     t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> master
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -83,6 +92,9 @@ ActiveRecord::Schema.define(version: 20190223105733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   end
 
