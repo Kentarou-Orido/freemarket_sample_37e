@@ -2,10 +2,6 @@ button {
   padding: 0;
 }
 
-select {
-  appearance: none;
-  -webkit-appearance: none;
-}
 
 .l-single {
   &__container {
@@ -34,20 +30,16 @@ select {
   }
 }
 
-.form__group:first-child {
-  margin: 0;
-}
-
 .form {
   &__group {
     margin: 40px 0 0;
 
-    label {
-      font-weight: 600;
+    &:first-of-type {
+      margin: 0;
     }
 
-    span {
-
+    label {
+      font-weight: 600;
     }
 
     p {
@@ -69,15 +61,25 @@ select {
     }
   }
 
+  &__birthday {
+      font-weight: 600;
+    }
 
-  &__require {
+  &__default {
     margin: 0 0 0 8px;
     padding: 2px 4px;
     border-radius: 2px;
     color: #fff;
     font-size: 12px;
     vertical-align: top;
-    background-color: #ea352d;
+
+    &.form-red {
+      background-color: #ea352d;
+    }
+
+    &.form-gray {
+      background-color: #666666;
+    }
   }
 
   &__info-text {
@@ -142,6 +144,11 @@ select {
     line-height: 1.5;
     cursor: pointer;
     display: inline-block;
+    margin: 8px 0 0;
+
+    &:first-child {
+      margin: 0;
+    }
   }
 }
 
@@ -178,4 +185,9 @@ select {
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
+
+  &--remarks {
+    @extend .input-default;
+    height: 250px;
+  }
 }

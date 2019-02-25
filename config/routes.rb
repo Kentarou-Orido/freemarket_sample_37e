@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resource :users, only: [:show] do
-    resource :profile,:identification, only: [:show]
+  resources :users, only: [:show, :new] do
+    resources :profile,:identification, only: [:show]
     resources :cards, only: [:index, :new]
-    resources :entries, only: [:index]
+    resources :addresses, only: [:new]
   end
-  resource :logout,:sell, only: [:show]
-  resource :items, only: [:show, :index, :buy]
-  resource :signups, :logins, only: [:show]
+  resources :logout,:sell, only: [:show]
+  resources :items, only: [:show, :index, :buy]
+  resources :signups, :logins, only: [:show]
 end

@@ -1,0 +1,37 @@
+%main.single-main
+  %section.l-single__container
+    %h2.l-single__head お届け先住所入力
+    = form_for [@user, @address], {html: {class: "l-single__inner h-adr"}} do |f|
+      %span.p-country-name{style: "display:none;"}Japan
+      .l-single__content
+        %input.p-country-name{ type: "hidden", value: "Japan"}
+          .form__group
+            = f.label :postcode, "郵便番号"
+            %span.form__default.form-red 必須
+            = f.text_field :postcode, class: "input-default p-postal-code", maxlength: "8", size: "8", placeholder: "例) 1066118 (ハイフンなし)"
+            = link_to "郵便番号がわからない場合は", "https://www.post.japanpost.jp/zipcode/", target: "_blank"
+          .form__group
+            = f.label :prefectures, "都道府県"
+            %span.form__default.form-red 必須
+            = f.text_field :prefectures, class: "input-default p-region", maxlength: "8", name: "pref21", size: "10", placeholder: "例) 東京都"
+          .form__group
+            = f.label :municipality, "市区町村"
+            %span.form__default.form-red 必須
+            = f.text_field :municipality, class: "input-default p-locality", name: "addr21", placeholder: "例) 港区"
+          .form__group
+            = f.label :street_number, "町名・番地"
+            %span.form__default.form-red 必須
+            = f.text_field :street_number, class: "input-default p-street-address p-extended-address", name: "strt21", placeholder: "例) 六本木6-10-1"
+          .form__group
+            = f.label :building_name, "建物名"
+            %span.form__default.form-gray 任意
+            = f.text_field :building_name, class: "input-default", placeholder: "例) 六本木ヒルズ森タワー"
+          .form__group
+            = f.label :room_number, "部屋番号・階数"
+            %span.form__default.form-gray 任意
+            = f.text_field :room_number, class: "input-default", placeholder: "例) 18F"
+          .form__group
+            = f.label :remarks, "備考欄"
+            %span.form__default.form-gray 任意
+            = f.text_area :remarks, class: "input-default--remarks", cols: "300", rows: "20", placeholder: "配達業者様に連絡したいことをご記入ください"
+        = f.submit "新規会員登録を完了する", class: "btn-default btn-red"
