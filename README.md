@@ -14,6 +14,9 @@
 |birthday|data|null:false, unique: true|
 |icon|string|unique: true|
 |email|string|null:false|
+|rate_good|integer|default: “0”|
+|rate_normal|integer|default: “0”|
+|rate_bad|integer|default: “0”|
 
 ## Association
 - has_many:items
@@ -30,18 +33,13 @@
 |price|integer|null:false|
 |buyer_id|references|null:false, foreign_key: true|
 |seller_id|references|null:false, foreign_key: true|
-|brand|sting|
-|trade_status|integer|null:false|
 |item_condition|integer|null:false|
-|postage|string|null:false|
 |area|sting|null:false|
 |shipping_method|integer|null:false|
-|delivery_method|string|null:false|
+|delivery_date|string|null:false|
 |delivery_burden|string|null:false|
 |size|string||
 |text|text|null:false|
-|brand_id|references|null:false, foreign_key|
-|category_id|references|null:false, foreign_key|
 
 ## Association
 - belongs_to:user
@@ -49,7 +47,7 @@
 - belongs_tp:buyer,class_name:'User'
 - has_many:comments
 - has_many:images
-- has_many:categories
+- has_many:categories, through:categoriegroups
 - has_many:brands
 
 ## cardsテーブル
@@ -88,7 +86,7 @@
 |ancestry|integer||
 
 ## Association
-- belongs_to:item
+- has_many :item, through:categoriegroups
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -120,6 +118,16 @@
 
 ## Association
 - belongs_to:item
+
+## categoriegroupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|foreign_key: true|
+|categorie_id|references|foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :categorie
 
 ## マイグレートに際して、カラム関係の変更点(by 織戸)
 
