@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190224044623) do
+ActiveRecord::Schema.define(version: 20190226154113) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "postcode",                    null: false
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20190224044623) do
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
   end
 
+  create_table "categoriegroups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id"
+    t.integer  "categorie_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["categorie_id"], name: "index_categoriegroups_on_categorie_id", using: :btree
+    t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
+  end
+
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name",     null: false
     t.string  "ancestry"
@@ -72,9 +81,7 @@ ActiveRecord::Schema.define(version: 20190224044623) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
     t.integer  "price",                         null: false
-    t.integer  "trade_status",                  null: false
     t.integer  "item_condition",                null: false
-    t.string   "postage",                       null: false
     t.string   "area",                          null: false
     t.integer  "shipping_method",               null: false
     t.string   "size"
@@ -83,8 +90,8 @@ ActiveRecord::Schema.define(version: 20190224044623) do
     t.datetime "updated_at",                    null: false
     t.integer  "seller_id",                     null: false
     t.integer  "buyer_id"
-    t.string   "delivery_date",                 null: false
-    t.string   "delivery_burden",               null: false
+    t.integer  "delivery_date",                 null: false
+    t.integer  "delivery_burden",               null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
   end
@@ -110,6 +117,8 @@ ActiveRecord::Schema.define(version: 20190224044623) do
   add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
   add_foreign_key "cards", "users"
+  add_foreign_key "categoriegroups", "categories", column: "categorie_id"
+  add_foreign_key "categoriegroups", "items"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
