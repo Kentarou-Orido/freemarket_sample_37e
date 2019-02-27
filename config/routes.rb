@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     resources :cards, only: [:index, :new]
   end
   resource :logout,:sell, only: [:show]
-  resources :items, only: [:show, :index, :buy]
-  resource :signups, :logins, only: [:show]
+  resources :items, only: [:index, :show] do
+    collection do
+      get 'purchase'
+      post 'completed_purchase'
+    end
+  end
+  resource :signups, :logins only: [:show]
 end
