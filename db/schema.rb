@@ -58,15 +58,6 @@ ActiveRecord::Schema.define(version: 20190227040232) do
     t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
   end
 
-  create_table "categories_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "item_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_categoriegroups_on_category_id", using: :btree
-    t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
-  end
-
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                  null: false
     t.integer  "item_id",                  null: false
