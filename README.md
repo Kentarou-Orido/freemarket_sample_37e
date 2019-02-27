@@ -40,10 +40,6 @@
 |delivery_burden|string|null:false|
 |size|string||
 |text|text|null:false|
-|seller_id|references|foreign_key|
-|buyer_id|references|foreign_key|
-|brand_id|references|null:false, foreign_key: true|
-|category_id|references|null:false, foreign_key: true|
 
 ## Association
 - belongs_to:user
