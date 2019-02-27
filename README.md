@@ -119,7 +119,7 @@
 ## Association
 - belongs_to:item
 
-## categoriegroupsテーブル
+## categories_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|foreign_key: true|

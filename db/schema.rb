@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190226163938) do
+ActiveRecord::Schema.define(version: 20190227034617) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "postcode",                    null: false
@@ -43,19 +43,19 @@ ActiveRecord::Schema.define(version: 20190226163938) do
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
   end
 
-  create_table "categoriegroups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name",     null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+  end
+
+  create_table "categories_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "item_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_categoriegroups_on_category_id", using: :btree
     t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
-  end
-
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",     null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -115,8 +115,8 @@ ActiveRecord::Schema.define(version: 20190226163938) do
   add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
   add_foreign_key "cards", "users"
-  add_foreign_key "categoriegroups", "categories"
-  add_foreign_key "categoriegroups", "items"
+  add_foreign_key "categories_groups", "categories"
+  add_foreign_key "categories_groups", "items"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
