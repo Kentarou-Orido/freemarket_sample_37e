@@ -5,15 +5,15 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new] do
     resources :profile,:identification, only: [:show]
     resources :cards, only: [:index, :new]
-    resources :addresses, only: [:new]
+    resources :addresses, only: [:new, :create]
   end
 
-  resources :logout,:sell, only: [:show]
+  resources :logouts,:sell, only: [:show]
   resources :items, only: [:index, :show] do
     collection do
       get 'purchase'
       post 'completed_purchase'
     end
   end
-  resources :signups, logins: [:show]
+  resources :signups, :logins, only: [:index]
 end
