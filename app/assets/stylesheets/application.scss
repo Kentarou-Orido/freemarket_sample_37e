@@ -1,12 +1,13 @@
 @import "font-awesome";
-@import "./reset";
 @import "config/variable";
+@import "./reset";
 @import "./common";
 @import "mixin/clearfix";
 @import "modules/default/default-header";
 @import "./users";
 @import "items/*";
 @import "items/show/*";
+@import "items/completed_purchase/*";
 @import "./identifications";
 @import "./logouts";
 @import "./sells";
@@ -16,3 +17,4 @@
 @import "modules/default/default-footer";
 @import "./signups";
 @import "./logins";
+@import "modules/default/footer-sell-btn";
