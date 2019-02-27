@@ -13,5 +13,5 @@ Rails.application.routes.draw do
       post 'completed_purchase'
     end
   end
-  resource :signups, :logins only: [:show]
+  resource :signups, :logins, only: [:show]
 end
