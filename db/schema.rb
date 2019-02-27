@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 20190227040232) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",     null: false
-    t.string "ancestry"
+    t.string  "name",     null: false
+    t.string  "ancestry"
+    t.integer "item_id",  null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+    t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
   end
 
   create_table "categories_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,13 +94,6 @@ ActiveRecord::Schema.define(version: 20190227040232) do
     t.integer  "delivery_burden",               null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
-  end
-
-  create_table "tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_tests_on_name", using: :btree
   end
 
   create_table "tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
