@@ -18,17 +18,4 @@
               = link_to "ブランドから探す", destroy_user_session_path, method: :delete, class: "pc-header-nav-root"
       %div.l-right
         %ul.pc-header-user-nav
-          %li
-            = link_to "https://www.mercari.com/jp/", class: "sp-header-user-icon" do
-              %figure
-                %div
-                  = image_tag 'member_photo.png'
-              %div マイページ
-          %li
-            = link_to "https://www.mercari.com/jp/", class: "pc-header-nav-root" do
-              = fa_icon "bell"
-              %span お知らせ
-          %li
-            = link_to "https://www.mercari.com/jp/", class: "pc-header-nav-root" do
-              = fa_icon "check"
-              %span やることリスト
+          = confirming_login_for_head_bar
