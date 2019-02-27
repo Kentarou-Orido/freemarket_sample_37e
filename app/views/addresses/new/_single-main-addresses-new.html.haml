@@ -10,18 +10,19 @@
             %span.form__default.form-red 必須
             = f.text_field :postcode, class: "input-default p-postal-code", maxlength: "8", size: "8", placeholder: "例) 1066118 (ハイフンなし)"
             = link_to "郵便番号がわからない場合は", "https://www.post.japanpost.jp/zipcode/", target: "_blank"
+            %p ※半角数字のハイフンなしで郵便番号を入力いただくと、自動的に町名まで表示されます
           .form__group
             = f.label :prefectures, "都道府県"
             %span.form__default.form-red 必須
-            = f.text_field :prefectures, class: "input-default p-region", maxlength: "8", name: "pref21", size: "10", placeholder: "例) 東京都"
+            = f.text_field :prefectures, class: "input-default p-region", maxlength: "8", size: "10", placeholder: "例) 東京都"
           .form__group
             = f.label :municipality, "市区町村"
             %span.form__default.form-red 必須
-            = f.text_field :municipality, class: "input-default p-locality", name: "addr21", placeholder: "例) 港区"
+            = f.text_field :municipality, class: "input-default p-locality", placeholder: "例) 港区"
           .form__group
             = f.label :street_number, "町名・番地"
             %span.form__default.form-red 必須
-            = f.text_field :street_number, class: "input-default p-street-address p-extended-address", name: "strt21", placeholder: "例) 六本木6-10-1"
+            = f.text_field :street_number, class: "input-default p-street-address p-extended-address", placeholder: "例) 六本木6-10-1"
           .form__group
             = f.label :building_name, "建物名"
             %span.form__default.form-gray 任意
