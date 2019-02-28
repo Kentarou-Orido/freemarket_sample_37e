@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
   has_ancestry
-  belongs_to :item
+  has_many :items, through: :categories_groups
+  has_many :categories_groups
 end
