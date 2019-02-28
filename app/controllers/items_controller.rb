@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
     @items = Item.all
     @categories = Category.find([1,2,3,4])
-
+    @brands = Brand.find([1,2,3,4])
 
   end
 

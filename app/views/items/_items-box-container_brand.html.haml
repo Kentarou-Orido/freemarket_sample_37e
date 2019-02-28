@@ -1,0 +1,13 @@
+%section.items-box-container
+  %h3.text-center
+    = link_to "uses/show" do
+      %span
+        #{brand.name}
+        新着アイテム
+  .items-box-content
+    = render "items/items-box"
+    = render "items/items-box"
+    = render "items/items-box"
+    = render "items/items-box"
+  .view-all
+    = link_to "すべての商品を見る", ""
