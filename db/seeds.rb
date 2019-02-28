@@ -5,3 +5,41 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# -*- coding: utf-8 -*-
+
+User.create!(
+  email: Faker::Internet.email,
+  nickname: Faker::Name.name,
+  family_name: Gimei.last.kanji,
+  first_name: Gimei.first.kanji,
+  family_name_kana: Gimei.last.katakana,
+  first_name_kana: Gimei.first.katakana,
+  birthday: Faker::Date.birthday(18, 65),
+  password: Faker::Number.number(6)
+)
+
+50.times do
+  Item.create!(
+    name: Faker::Dessert.variety,
+    price: Faker::Number.number(6),
+    item_condition: 0,
+    area: Gimei.prefecture.kanji,
+    shipping_method: 0,
+    text: "sample",
+    created_at: Faker::Time.between(DateTime.now - 1, DateTime.now),
+    updated_at: Faker::Time.between(DateTime.now - 1, DateTime.now),
+    seller_id: 1,
+    delivery_date: 0,
+    delivery_burden: 0
+  )
+end
+
+Category.create!(name: "レディース", item_id: 1)
+Category.create!(name: "メンズ", item_id: 2)
+Category.create!(name: "ベビー・キッズ", item_id: 3)
+Category.create!(name: "コスメ・香水・美容", item_id: 4)
+
+Brand.create!(name: "シャネル", item_id: 1)
+Brand.create!(name: "ルイヴィトン", item_id: 2)
+Brand.create!(name: "シュプリーム", item_id: 3)
+Brand.create!(name: "ナイキ", item_id: 4)
