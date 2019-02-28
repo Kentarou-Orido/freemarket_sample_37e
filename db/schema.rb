@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 20190227040232) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",     null: false
-    t.string "ancestry"
+    t.string  "name",     null: false
+    t.string  "ancestry"
+    t.integer "item_id"
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+    t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
   end
 
   create_table "categories_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -54,8 +56,8 @@ ActiveRecord::Schema.define(version: 20190227040232) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_categoriegroups_on_category_id", using: :btree
-    t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
+    t.index ["category_id"], name: "index_categories_groups_on_category_id", using: :btree
+    t.index ["item_id"], name: "index_categories_groups_on_item_id", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -125,6 +127,7 @@ ActiveRecord::Schema.define(version: 20190227040232) do
   add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
   add_foreign_key "cards", "users"
+  add_foreign_key "categories", "items"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"
   add_foreign_key "comments", "items"
