@@ -1,5 +1,5 @@
 class CategoriegroupsToCategoryGroups < ActiveRecord::Migration[5.0]
   def change
-    rename_table :Categoriegroups, :categories_groups
+    rename_table :categoriegroups, :categories_groups
   end
 end
