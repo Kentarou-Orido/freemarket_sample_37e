@@ -4,7 +4,8 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User", optional: true
   has_many :comments
   has_many :images
-  has_many :categories
+  has_many :categories_groups
+  has_many :categories, through: :categories_groups
   has_many :brands
 
   enum size:{ xxs: 153, xs: 154, s: 2, m: 3, l: 4, xl: 5, xxl: 155, xxxl: 156, xxxxl: 157, free: 7}
