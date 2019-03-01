@@ -2,7 +2,7 @@
 
 %main.single-main
   %section.l-single-container.buy-item-container
-    %h2.l-single-head.bold 購入を確定？
+    %h2.l-single-head.bold 購入を確定しますか？
     %section.buy-content.buy-item
       .buy-content-inner
         %h3.buy-item-iamge
@@ -10,7 +10,7 @@
         = form_tag action: :completed_purchase,class: "buy-form", method:"POST", id: @item.id do
           %p.buy-item-name.bold little sunny bite denim pants デニム 新品
           %p.buy-price-ja.bold
-            ¥ 7,80
+            ¥ 7,800
             %span.item-shipping-fee.f14.bold
               送料込み
           %ul.buy-accordion.not-have
@@ -21,7 +21,7 @@
               .buy-price-cell 支払い金額
               .buy-price-cell
                 %span{"data-buy-pay":"7800"} ¥ 7,800
-          %script.payjp-button{"data-key": "#{Rails.application.secrets.PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript","data-text": "購入しない"}
+          %script.payjp-button{"data-key": "#{Rails.application.secrets.PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript","data-text": "購入する"}
 
 
     %section.buy-content.buy-user-info
