@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'rails-controller-testing'
   gem 'enum_help'
+  gem 'faker'
 end
 
 group :development do
@@ -72,3 +73,5 @@ gem 'font-awesome-rails'
 gem 'rb-readline'
 gem 'payjp'
 gem 'pry-rails'
+gem 'carrierwave'
+gem 'mini_magick'

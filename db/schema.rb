@@ -125,9 +125,9 @@ ActiveRecord::Schema.define(version: 20190227040232) do
   end
 
   add_foreign_key "brands", "items"
-  add_foreign_key "categories", "items"
+  # add_foreign_key "categories", "items"
   add_foreign_key "cards", "users"
-  add_foreign_key "categories", "items"
+  # add_foreign_key "categories", "items"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"
   add_foreign_key "comments", "items"
