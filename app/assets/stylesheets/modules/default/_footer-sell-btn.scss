@@ -1,0 +1,22 @@
+.footer-sell-btn {
+  bottom: 32px;
+  right: 32px;
+  width: 160px;
+  height: 160px;
+  font-size: 22px;
+  position: fixed;
+  border-radius: 50%;
+  background-color: #ea352d;
+  text-align: center;
+
+  p.sell-btn {
+    color: #fff;
+    margin: 32px 0 0;
+  }
+
+  .icon-camera {
+    margin: 8px 0 0;
+    font-size: 57px;
+    color: #fff;
+  }
+}
