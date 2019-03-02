@@ -1,0 +1,102 @@
+ja:
+  enums:
+    item:
+      size:
+        xxs: XXS以下
+        xs: XS(SS)
+        s: S
+        m: M
+        l: L
+        xl: XL(LL)
+        xxl: 2XL(3L)
+        xxxl: 3XL(4L)
+        xxxxl: 4XL(5L)以上
+        free: FREE SIZE
+      item_condition:
+        new: 新品・未使用
+        unused: 未使用に近い
+        no_stain: 目立った傷や汚れなし
+        little_stain: やや傷や汚れあり
+        scrached: 傷や汚れあり
+        bad: 全体的に状態が悪い
+      delivery_burden:
+        include: 送料込み（出品者負担）
+        arrival: 着払い（購入者負担）
+      shipping_method:
+        other: 未定
+        merukari: らくらくメルカリ便
+        yumail: ゆうメール
+        letterpack: レターパック
+        normal: 普通郵便（定型、定形外）
+        kuroneko: クロネコヤマト
+        yupack: ゆうパック
+        clickpost: クリックポスト
+        yupaket: ゆうパケット
+      area:
+        hokkaido: 北海道
+        aomori: 青森県
+        iwate: 岩手県
+        miyagi: 宮城県
+        akita: 秋田県
+        yamagata: 山形県
+        fukushima: 福島県
+        ibaraki: 茨城県
+        tochigi: 栃木県
+        gunma: 群馬県
+        saitama: 埼玉県
+        chiba: 千葉県
+        tokyo: 東京都
+        kanagawa: 神奈川県
+        nigata: 新潟県
+        toyama: 富山県
+        ishikawa: 石川県
+        fukui: 福井県
+        yamanashi: 山梨県
+        nagano: 長野県
+        gifu: 岐阜県
+        shizuoka: 静岡県
+        aichi: 愛知県
+        mie: 三重県
+        shiga: 滋賀県
+        kyoto: 京都府
+        osaka: 大阪府
+        hyogo: 兵庫県
+        nara: 奈良県
+        wakayama: 和歌山県
+        tottori: 鳥取県
+        shimane: 島根県
+        okayama: 大阪府
+        hiroshima: 広島県
+        yamaguchi: 山口県
+        tokushima: 徳島県
+        kagawa: 香川県
+        ehime: 愛媛県
+        kochi: 高知県
+        fukuoka: 福岡県
+        saga: 佐賀県
+        nagasaki: 長崎県
+        kumamoto: 熊本県
+        oita: 大分県
+        miyazaki: 宮崎県
+        kagoshima: 鹿児島県
+        okinawa: 沖縄県
+        other: 未定
+      delivery_date:
+        a_day: 1~2日で発送
+        two_day: 2~3日で発送
+        four_day: 4~7日で発送
+    # category:
+    #   category1:
+    #     ladies: レディース
+    #     mens: メンズ
+    #     baby: ベビー・キッズ
+    #     interia: インテリア・住まい・小物
+    #     book: 本・音楽・ゲーム
+    #     toy: おもちゃ・ホビー・グッズ
+    #     cosmetic: コスメ・香水・美容
+    #     camera: 家電・スマホ・カメラ
+    #     sports: スポーツ・レジャー
+    #     handmade: ハンドメイド
+    #     tickets: チケット
+    #     cars: 自動車・オートバイ
+    #     other: その他
