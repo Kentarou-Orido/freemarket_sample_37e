@@ -47,23 +47,23 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.collection_select :category_ids, Category.where(ancestry: "0"), :id, :name, {prompt: "---"}, {class: 'select-default', multiple: true} do
+                      = f.collection_select :category_ids, Category.where(ancestry: "0"), :id, :name, {prompt: "---"}, {class: 'select-default select-category', multiple: true} do
                         = fa_icon 'angle-down'
-                .form-group
+                .form-group.form-group-size
                   = f.label :size do
                     サイズ
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :size, {xxs: 'xxs', xs: 'xs', s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl', xxxl: 'xxxl', xxxxl: 'xxxxl', free: 'free'}, {prompt: "---"}, {class: 'select-default'}
+                      = f.select :size, {xxs: 'xxs', xs: 'xs', s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl', xxxl: 'xxxl', xxxxl: 'xxxxl', free: 'free'}, {prompt: "---"}, {class: 'select-default select-size'}
                       = fa_icon 'angle-down'
                 = f.fields_for 'brand_attributes', @item.brand do |brand_f|
-                  .form-group
+                  .form-group.form-group-brand
                     = brand_f.label :name do
                       ブランド
                       %span.form-arbitrary 任意
                     %div
-                      = brand_f.text_field :name, class: 'input-default', placeholder: '例）シャネル'
+                      = brand_f.text_field :name, class: 'input-default input-brand', placeholder: '例）シャネル'
                 .form-group
                   = f.label :item_condition do
                     商品の状態
@@ -88,17 +88,17 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :delivery_burden, {}, {prompt: "---"}, {class: 'select-default'} do
+                      = f.select :delivery_burden, {}, {prompt: "---"}, {class: 'select-default select-delivery'} do
                         %option{value: 'include'} 送料込み（出品者負担）
                         %option{value: 'arrival'} 着払い（購入者負担）
                       = fa_icon 'angle-down'
-                .form-group
+                .form-group.form-group-shipping
                   = f.label :shipping_method do
                     配送の方法
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :shipping_method, {}, {prompt: "---"}, {class: 'select-default'} do
+                      = f.select :shipping_method, {}, {prompt: "---"}, {class: 'select-default select-method'} do
                         %option{value: 'other'} 未定
                         %option{value: 'merukari'} らくらくメルカリ便
                         %option{value: 'yumail'} ゆうメール
