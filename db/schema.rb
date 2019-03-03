@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190227040232) do
+ActiveRecord::Schema.define(version: 20190302071253) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "postcode",                    null: false
@@ -27,9 +27,7 @@ ActiveRecord::Schema.define(version: 20190227040232) do
   end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "name"
-    t.integer "item_id", null: false
-    t.index ["item_id"], name: "index_brands_on_item_id", using: :btree
+    t.string "name"
   end
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,7 +44,7 @@ ActiveRecord::Schema.define(version: 20190227040232) do
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name",     null: false
     t.string  "ancestry"
-    t.integer "item_id"
+    t.integer "item_id",  null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
     t.index ["item_id"], name: "index_categories_on_item_id", using: :btree
   end
@@ -56,8 +54,8 @@ ActiveRecord::Schema.define(version: 20190227040232) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_categories_groups_on_category_id", using: :btree
-    t.index ["item_id"], name: "index_categories_groups_on_item_id", using: :btree
+    t.index ["category_id"], name: "index_categoriegroups_on_category_id", using: :btree
+    t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,7 +80,7 @@ ActiveRecord::Schema.define(version: 20190227040232) do
     t.string   "name",                          null: false
     t.integer  "price",                         null: false
     t.integer  "item_condition",                null: false
-    t.string   "area",                          null: false
+    t.integer  "area",                          null: false
     t.integer  "shipping_method",               null: false
     t.string   "size"
     t.text     "text",            limit: 65535, null: false
@@ -92,6 +90,8 @@ ActiveRecord::Schema.define(version: 20190227040232) do
     t.integer  "buyer_id"
     t.integer  "delivery_date",                 null: false
     t.integer  "delivery_burden",               null: false
+    t.integer  "brand_id"
+    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
   end
@@ -124,13 +124,12 @@ ActiveRecord::Schema.define(version: 20190227040232) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "brands", "items"
-  # add_foreign_key "categories", "items"
+  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
-  # add_foreign_key "categories", "items"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
 end
