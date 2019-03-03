@@ -129,6 +129,16 @@
       vertical-align: top;
   }
 
+  &-arbitrary {
+      background-color: #ccc;
+      color: white;
+      font-size: 12px;
+      margin: 0 0 0 8px;
+      padding: 3.5px 4px;
+      border-radius: 2px;
+      vertical-align: top;
+    }
+
   &-group {
     margin: 40px 0 0;
 
