@@ -13,7 +13,7 @@ class SellsController < ApplicationController
 
   private
   def sell_params
-    params.require(:item).permit(:name, :price, :trade_status, :item_condition, :delivery_burden, :area, :shipping_method, :delivery_date, :size, :text, images_attributes: [:image_url], category_attributes: [:id]).merge(user_id: 1)
+    params.require(:item).permit(:name, :price, :trade_status, :item_condition, :delivery_burden, :area, :shipping_method, :delivery_date, :size, :text, {:category_ids => []}, images_attributes: [:image_url]).merge(seller: User.find(1))
   end
 
 end
