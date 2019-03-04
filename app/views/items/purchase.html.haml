@@ -6,11 +6,13 @@
     %section.buy-content.buy-item
       .buy-content-inner
         %h3.buy-item-iamge
-          = image_tag "m60436790911_1.jpg", class: "is-higher-height lazyloaded"
+          = image_tag(@images[0].image_url, class: "is-higher-height lazyloaded")
+
+
         = form_tag action: :completed_purchase,class: "buy-form", method:"POST", id: @item.id do
-          %p.buy-item-name.bold little sunny bite denim pants デニム 新品
+          %p.buy-item-name.bold #{@item.name}
           %p.buy-price-ja.bold
-            ¥ 7,800
+            #{converting_to_jpy(@item.price)}
             %span.item-shipping-fee.f14.bold
               送料込み
           %ul.buy-accordion.not-have
@@ -20,7 +22,7 @@
             %li.buy-price-row.buy-you-pay.bold
               .buy-price-cell 支払い金額
               .buy-price-cell
-                %span{"data-buy-pay":"7800"} ¥ 7,800
+                %span{"data-buy-pay": @item.price }  #{converting_to_jpy(@item.price)}
           %script.payjp-button{"data-key": "#{Rails.application.secrets.PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript","data-text": "購入する"}
 
 
