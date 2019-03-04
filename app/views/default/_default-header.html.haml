@@ -2,7 +2,7 @@
   .pc-header-inner
     .pc-header-inner__clearfix
       %h1.l-left
-        = link_to "https://www.mercari.com/jp/" do
+        = link_to "/" do
           = image_tag 'default-header-logo.svg', size: "134x36"
       %form.pc-header-form
         %input.pc-header-form__input-default{ type: "text", placeholder: "キーワードから探す"}
@@ -19,7 +19,7 @@
       %div.l-right
         %ul.pc-header-user-nav
           %li
-            = link_to "https://www.mercari.com/jp/", class: "sp-header-user-icon" do
+            = link_to "/users", class: "sp-header-user-icon" do
               %figure
                 %div
                   = image_tag 'member_photo.png'
