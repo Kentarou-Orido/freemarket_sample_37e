@@ -1,145 +1,36 @@
-.items-box-content.clearfix
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m94860364480/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m94860364480_1.jpg?1544787066",class: "lazyloaded is-higher-height")
-      .items-box-body
-        %h3.items-box-name.font-2 古着90sUSA製 パタゴニア【SYNCHILLA】フリース ジャケットL 青
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 7,800
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 30
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m55748360776/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m55748360776_1.jpg?1542300530",class: "lazyloaded")
+.items-in-user-profile
+  %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
+    %h2.items-box-head.bold
+      %a{href: "https://www.mercari.com/jp/u/387561164/"} #{@seller.nickname}のその他の出品
+      .items-box-content.clearfix
+        - @saling_items[0...6].each do |saling_item|
+          %section.items-box
+            = link_to item_path(id: saling_item.id) do
+              %figure.items-box-photo
+                =image_tag saling_item.images.first.image_url
+              .items-box-body
+                %h3.items-box-name.font-2 #{saling_item.name}
+                .items-box-num.clearfix
+                  .items-box-price.font-5 #{saling_item.price}
+                  .items-box-likes.font-2
+                    =fa_icon "heart-o"
+                    %span 30
+                  %p.item-box-tax (税込)
 
-      .items-box-body
-        %h3.items-box-name.font-2 【KOE×トムブラウン】コラボ ウールパンツ/スラックス 紺
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 3,500
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 9
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m92725398431/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m92725398431_1.jpg?1544866851",class: "lazyloaded is-higher-height")
-        %figcaption
-          .item-sold-out-badge
-            %div SOLD
-      .items-box-body
-        %h3.items-box-name.font-2 古着90s コロンビア◇マウンテンジャケット 黒×ピンク メンズ
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 5,000
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m56784232463/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56784232463_1.jpg?1544866935",class: "lazyloaded is-higher-height")
-      .items-box-body
-        %h3.items-box-name.font-2 非売品/未使用★アジア大会 ボストンバッグ 日本代表 選手用 支給品 デサント製
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 13,300
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 10
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m60906493501/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m60906493501_1.jpg?1548871400",class: "lazyloaded")
-      .items-box-body
-        %h3.items-box-name.font-2 【新品未開封品】  ウルトラマン オーブ DX オーブカリバー
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 6,000
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m71981894389/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m71981894389_1.jpg?1548525253",class: "lazyloaded")
-        %figcaption
-          .item-sold-out-badge
-            %div SOLD
-      .items-box-body
-        %h3.items-box-name.font-2 mamiyou 様専用 配信用(270)
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 4,000
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 3
-          %p.item-box-tax (税込)
-%section.items-box-container.clearfix.items-box-overflow
-%h2.items-box-head
-  %a{href: "https://www.mercari.com/jp/brand/539/214/"}
-    コーチのショルダーバッグ その他の商品
-.items-box-content.clearfix
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m58900580071/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m58900580071_1.jpg?1549104618",class: "lazyloaded")
-      .items-box-body
-        %h3.items-box-name.font-2 COACH コーチ ショルダーバッグ
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 8,500
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 2
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m11163049157/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m11163049157_1.jpg?1549170958",class: "lazyloaded")
-      .items-box-body
-        %h3.items-box-name.font-2 COACH シグネチャー ショルダーバッグ
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 5,600
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m21670064701/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m21670064701_1.jpg?1546499344",class: "lazyloaded")
-      .items-box-body
-        %h3.items-box-name.font-2 COACH オールドコーチ 2way ショルダーバッグ USA製 ヴィンテージ
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 16,500
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 39
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m85644954881/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m85644954881_1.jpg?1548685177",class: "lazyloaded is-higher-height")
-      .items-box-body
-        %h3.items-box-name.font-2 COACH コーチ バッグ ショルダー シグネチャー 無くなり次第終了 残り１点
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 21,500
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 2
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m53628051806/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m53628051806_1.jpg?1546322009",class: "lazyloaded is-higher-height")
-      .items-box-body
-        %h3.items-box-name.font-2 COACH コーチ ショルダーバッグ
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 19,500
-          .items-box-likes.font-2
-            =fa_icon "heart-o"
-            %span 2
-          %p.item-box-tax (税込)
-  %section.items-box
-    %a{href: "https://item.mercari.com/jp/m52143894756/"}
-      %figure.items-box-photo
-        =image_tag("https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m52143894756_1.jpg?1549170820",class: "lazyloaded")
-      .items-box-body
-        %h3.items-box-name.font-2 COACH☆チェーンバッグ
-        .items-box-num.clearfix
-          .items-box-price.font-5 ¥ 11,111
-          %p.item-box-tax (税込)
+  %section.items-box-container.clearfix.items-box-overflow
+    %h2.items-box-head.bold
+      %a{href: "https://www.mercari.com/jp/brand/539/214/"} #{@brand.name}の#{@categories[-1].name}の商品
+      .items-box-content.clearfix
+        - @other_items[0...6].each do |other_item|
+          %section.items-box
+            = link_to item_path(id: other_item.id) do
+              %figure.items-box-photo
+                =image_tag other_item.images.first.image_url
+              .items-box-body
+                %h3.items-box-name.font-2 #{other_item.name}
+                .items-box-num.clearfix
+                  .items-box-price.font-5 #{other_item.price}
+                  .items-box-likes.font-2
+                    =fa_icon "heart-o"
+                    %span 2
+                  %p.item-box-tax (税込)
