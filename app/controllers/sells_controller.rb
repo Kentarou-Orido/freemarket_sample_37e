@@ -8,8 +8,7 @@ class SellsController < ApplicationController
 
   def create
     @item = Item.new(sell_params)
-    binding.pry
-    render action: :create unless @item.save
+    @item.save
   end
 
   private
