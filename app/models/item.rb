@@ -7,8 +7,6 @@ class Item < ApplicationRecord
   has_many :categories_groups
   has_many :categories, through: :categories_groups
 
-  has_many :brands
-
   enum size:{ xxs: 153, xs: 154, s: 2, m: 3, l: 4, xl: 5, xxl: 155, xxxl: 156, xxxxl: 157, free: 7}, _suffix: true
   enum item_condition:{ new: 1, unused: 2, no_stain: 3, little_stain: 4, scrached: 5, bad: 6},_suffix: true
   enum delivery_burden:{ include: 2, arrival: 1},_suffix: true
