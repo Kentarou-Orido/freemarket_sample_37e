@@ -2,13 +2,14 @@ class SellsController < ApplicationController
 
   def show
     @item = Item.new
+    @categoryroot = Category.where(ancestry: "0")
     @item.images.build
   end
 
   def create
     @item = Item.new(sell_params)
     binding.pry
-    @item.save
+    render action: :create unless @item.save
   end
 
   private
