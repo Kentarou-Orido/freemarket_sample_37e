@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'gimei'
   gem 'faker'
+  gem 'enum_help'
 end
 
 group :development do

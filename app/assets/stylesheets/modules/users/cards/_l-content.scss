@@ -1,6 +1,5 @@
 .l {
   &-content {
-    height: 358px;
     width: 700px;
     float: right;
   }
@@ -8,7 +7,6 @@
   &-chapter {
     &-container {
       background-color: #fff;
-      height: 358px;
       width: 700px;
 
       &:first-child {
@@ -36,7 +34,6 @@
 
   &-single {
     &-inner {
-      height: 179px;
       width: 572px;
       padding: 64px;
       border-top: 1px solid #f5f5f5;

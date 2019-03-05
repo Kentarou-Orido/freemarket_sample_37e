@@ -43,3 +43,10 @@ Brand.create!(name: "シャネル", item_id: 1)
 Brand.create!(name: "ルイヴィトン", item_id: 2)
 Brand.create!(name: "シュプリーム", item_id: 3)
 Brand.create!(name: "ナイキ", item_id: 4)
+
+require "csv"
+
+CSV.foreach('db/category.csv', encoding: 'Shift_JIS:UTF-8') do |row|
+  Category.create(:name => row[0], :ancestry => row[1])
+end
+
