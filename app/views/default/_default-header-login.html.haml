@@ -1,14 +1,14 @@
 %li
-  = link_to "https://www.mercari.com/jp/", class: "sp-header-user-icon" do
+  = link_to user_path(current_user.id), class: "sp-header-user-icon" do
     %figure
       %div
         = image_tag 'member_photo.png'
     %div マイページ
 %li
-  = link_to "https://www.mercari.com/jp/", class: "pc-header-nav-root" do
+  = link_to user_path(current_user.id), class: "pc-header-nav-root" do
     = fa_icon "bell"
     %span お知らせ
 %li
-  = link_to "https://www.mercari.com/jp/", class: "pc-header-nav-root" do
+  = link_to user_path(current_user.id), class: "pc-header-nav-root" do
     = fa_icon "check"
     %span やることリスト
