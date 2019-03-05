@@ -18,25 +18,25 @@
         .tab-content
           %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
             %li
-              = link_to '/', {class: 'mypage-item-link'}
+              = link_to '/', {class: 'mypage-item-link'} do
                 %figure
                   = image_tag '/assets/default-header-logo.svg', {class: 'is-higher-widthlazyloaded'}
-                  .mypage-item-body.show-stock-item
-                    .mypage-item-text 写真
-                    %div
-                      %span.listing-item-count
-                        %i.icon-like-border
-                        %span 0
-                      %span.listing-item-count
-                        %i.icon-message
-                        %span 0
-                  = fa_icon 'angle-right'
+                .mypage-item-body.show-stock-item
+                  .mypage-item-text 写真
+                  %div
+                    %span.listing-item-count
+                      %i.icon-like-border
+                      %span 0
+                    %span.listing-item-count
+                      %i.icon-message
+                      %span 0
+                = fa_icon 'angle-right'
       %ul.mypage-history.pager
         %li.pager-prev.pager-cell
-          = link_to '/'
+          = link_to '/' do
             = fa_icon 'angle-left'
         %li.pager-next.pager-cell
-          = link_to '/'
+          = link_to '/' do
             = fa_icon 'angle-right'
     = render partial: "users/show/mypage-side"
   = render partial: "/default/default-footer"
