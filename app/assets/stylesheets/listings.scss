@@ -1,0 +1,4 @@
+.listings#show {
+  @import "./modules/users/show";
+  @import "./modules/listings/show";
+}
