@@ -100,6 +100,11 @@ ja:
         first_name_kana: "名カナ (全角)"
         birthday: "生年月日"
         telephone: "電話番号"
+      address:
+        postcode: "郵便番号"
+        prefectures: "都道府県"
+        municipality: "市区町村"
+        street_number: "町名・番地"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -155,9 +160,10 @@ ja:
       - :year
       - :month
       - :day
-    recaptcha:
-     errors:
-       verification_failed: 'reCAPTCHA認証に失敗しました。'
+  recaptcha:
+   errors:
+     verification_failed: 'reCAPTCHA認証に失敗しました。'
+     recaptcha_unreachable: "接続に失敗しました"
 
 
   time:
