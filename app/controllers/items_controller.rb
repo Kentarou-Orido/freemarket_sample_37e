@@ -7,10 +7,10 @@ class ItemsController < ApplicationController
 
   def show
     @seller = @item.seller
-    @brand = Brand.find(@item.brand_id)
+    @brand = Brand.find_by_id(@item.brand_id)
     @categories = @item.categories
-    @saling_items = Item.where(seller_id: @item.seller_id).where.not(id: @item.id)
-    @other_items = @categories[-1].items.where(brand_id: @item.brand_id).where.not(id: @item.id)
+    @other_uesr_items = Item.where(seller_id: @item.seller_id).where.not(id: @item.id)
+    @brand_category_items = @categories[-1].items.where(brand_id: @item.brand_id,buyer_id: nil).where.not(id: @item.id)
   end
 
   def purchase
