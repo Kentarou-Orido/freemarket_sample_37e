@@ -126,6 +126,7 @@ textarea {
   font-size: 16px;
 
   &--remarks {
+    @extend .input-default;
     height: 250px;
   }
 }

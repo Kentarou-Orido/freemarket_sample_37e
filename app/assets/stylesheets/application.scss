@@ -3,6 +3,7 @@
 @import "./reset";
 @import "./common";
 @import "mixin/clearfix";
+@import "./modules/notification-bar";
 @import "modules/default/default-header";
 @import "./users";
 @import "items/*";
@@ -16,7 +17,7 @@
 @import "./cards";
 @import "modules/default/default-footer";
 @import "./signups";
-@import "./logins";
+@import "./sessions";
 @import "modules/default/footer-sell-btn";
 @import "./addresses";
 @import "./registrations";
