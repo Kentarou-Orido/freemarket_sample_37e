@@ -1,5 +1,6 @@
 $(function() {
   $(".form-group-shipping").hide();
+  //カテゴリーのセレクタで使用
   // $(".form-group-size").hide();
   // $(".form-group-brand").hide();
 
@@ -12,7 +13,7 @@ $(function() {
       $(".form-group-shipping").show();
     }
   });
-
+  //カテゴリーのセレクタで使用
   // $(".select-category").on("change", function() {
   //   var categoryID = $(this).val();
   //   $(".select-size").val("");

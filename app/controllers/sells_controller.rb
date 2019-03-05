@@ -8,7 +8,10 @@ class SellsController < ApplicationController
 
   def create
     @item = Item.new(sell_params)
-    @item.save
+    if @item.save
+    else
+      redirect_to show_sells_path
+    end
   end
 
   private
