@@ -1,0 +1,15 @@
+%section.items-box
+  = link_to(purchase_items_path) do
+    %figure.items-box-photo
+      = image_tag "sample.jpg"
+    .items-box-body
+      .items-box-name
+        くつろぐ柴犬
+      .items-box-num
+        .items-box-price
+          ￥999999
+        .items-box-likes
+          %span 100
+          = fa_icon "heart"
+        %p.item-box-tax
+          (税込)

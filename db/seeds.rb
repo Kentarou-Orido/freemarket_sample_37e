@@ -22,15 +22,16 @@ User.create!(
   Item.create!(
     name: Faker::Dessert.variety,
     price: Faker::Number.number(6),
-    item_condition: 0,
-    area: Gimei.prefecture.kanji,
-    shipping_method: 0,
+    item_condition: Faker::Number.between(1, 3),
+    area: Faker::Number.between(1, 47),
+    shipping_method: 5,
     text: "sample",
     created_at: Faker::Time.between(DateTime.now - 1, DateTime.now),
     updated_at: Faker::Time.between(DateTime.now - 1, DateTime.now),
     seller_id: 1,
-    delivery_date: 0,
-    delivery_burden: 0
+    delivery_date: Faker::Number.between(1, 3),
+    delivery_burden: Faker::Number.between(1, 2),
+    brand_id: Faker::Number.between(1, 4)
   )
 end
 
