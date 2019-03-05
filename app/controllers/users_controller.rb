@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
   before_action :obtainment_user_id, only: [:show]
   before_action :verification_address, only: [:show]
 
-  def new
-
-  end
   def show
 
   end
