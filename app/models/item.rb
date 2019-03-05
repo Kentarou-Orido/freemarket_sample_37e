@@ -11,6 +11,14 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :categories
   accepts_nested_attributes_for :brand
 
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :item_condition, presence: true
+  validates :area, presence: true
+  validates :shipping_method, presence: true
+  validates :delivery_burden, presence: true
+  validates :delivery_date, presence: true
+
   enum size: %i[xxs xs s m l xl xxl xxxl xxxxl free]
   enum item_condition: %i[news unused no_stain little_stain scrached bad]
   enum delivery_burden: %i[include arrival]

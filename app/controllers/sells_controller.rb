@@ -10,7 +10,7 @@ class SellsController < ApplicationController
     @item = Item.new(sell_params)
     if @item.save
     else
-      redirect_to show_sells_path
+      redirect_to sell_path, flash: {miss: "必須項目をすべて選択してください"}
     end
   end
 
