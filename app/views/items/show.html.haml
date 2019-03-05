@@ -68,6 +68,7 @@
             %td
               %a{href: "https://www.mercari.com/jp/brand/539/"}
                 %div
+                - if @brand.present?
                   #{@brand.name}
           -if @item.size.present?
             %tr
