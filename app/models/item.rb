@@ -13,6 +13,7 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :price, presence: true
+  validates :size, presence: true
   validates :item_condition, presence: true
   validates :area, presence: true
   validates :shipping_method, presence: true
