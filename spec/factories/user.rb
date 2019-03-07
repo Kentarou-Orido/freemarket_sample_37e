@@ -11,5 +11,9 @@ FactoryGirl.define do
     first_name_kana     "aaaa"
     telephone           "00000000000"
     birthday            "1992-11-23"
+    icon                ""
+    rate_good           "0"
+    rate_normal         "0"
+    rate_bad            "0"
   end
 end
