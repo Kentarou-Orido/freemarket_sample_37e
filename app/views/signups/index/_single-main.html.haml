@@ -1,0 +1,14 @@
+%main.single-main
+  %section.l-single__container
+    %h2.l-single__head 新規会員登録
+    .l-single__inner
+      .l-single__content
+        = link_to new_user_registration_path, class: "btn-default btn-mail" do
+          = fa_icon "envelope"
+          %span メールアドレスで登録
+        %button.btn-default.btn-sns-facebook
+          = fa_icon "facebook-official"
+          %span Facebookで登録
+        %button.btn-default.btn-sns-google
+          = fa_icon "google-plus"
+          %span Googleで登録

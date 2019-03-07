@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190304123813) do
+=======
+ActiveRecord::Schema.define(version: 20190302071253) do
+>>>>>>> bcfb742ed0fd34295fdc1a87e0cfda0e109e4b37
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "postcode",                    null: false
@@ -42,8 +46,14 @@ ActiveRecord::Schema.define(version: 20190304123813) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+<<<<<<< HEAD
     t.string "name",     null: false
     t.string "ancestry"
+=======
+    t.string  "name",     null: false
+    t.string  "ancestry"
+    t.integer "item_id"
+>>>>>>> bcfb742ed0fd34295fdc1a87e0cfda0e109e4b37
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
@@ -52,8 +62,8 @@ ActiveRecord::Schema.define(version: 20190304123813) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_categoriegroups_on_category_id", using: :btree
-    t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
+    t.index ["category_id"], name: "index_categories_groups_on_category_id", using: :btree
+    t.index ["item_id"], name: "index_categories_groups_on_item_id", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -115,7 +125,10 @@ ActiveRecord::Schema.define(version: 20190304123813) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+<<<<<<< HEAD
   add_foreign_key "addresses", "users"
+=======
+>>>>>>> bcfb742ed0fd34295fdc1a87e0cfda0e109e4b37
   add_foreign_key "cards", "users"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"
