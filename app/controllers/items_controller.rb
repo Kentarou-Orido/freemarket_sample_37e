@@ -32,6 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def checking_login
-    redirect_to signups_path, notice: "この画面はログインしてからご覧になれます" unless user_signed_in?
+    redirect_to new_user_session_path, notice: "この画面はログインしてからご覧になれます" unless user_signed_in?
   end
 end
