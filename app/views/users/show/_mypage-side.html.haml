@@ -70,7 +70,7 @@
     %h3.l-side__mypage-nav__head 設定
     %ul.l-side__mypage-nav__list
       %li
-        = link_to user_profile_path(current_user.id), class: "l-side__mypage-nav__list__item" do
+        = link_to user_profile_index_path(current_user.id), class: "l-side__mypage-nav__list__item" do
           = fa_icon "angle-right"
           %span プロフィール
       %li
@@ -86,7 +86,7 @@
           = fa_icon "angle-right"
           %span メール/パスワード
       %li
-        = link_to user_identification_path(current_user.id), class: "l-side__mypage-nav__list__item" do
+        = link_to user_identification_index_path(current_user.id), class: "l-side__mypage-nav__list__item" do
           = fa_icon "angle-right"
           %span 本人情報
       %li
