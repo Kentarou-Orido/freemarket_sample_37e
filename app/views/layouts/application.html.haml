@@ -3,9 +3,13 @@
   %head
     %link{href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro", rel: "stylesheet"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{charset: "UTF-8", src: "https://yubinbango.github.io/yubinbango/yubinbango.js"}
+    %script{src: "https://www.google.com/recaptcha/api.js"}
     %title FreemarketSample37e
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
   %body{class: "#{controller.controller_name}", id: "#{controller.action_name}"}
+    - flash.each do |key, value|
+      = content_tag(:div, value, class: "notification-bar --#{key}")
     = yield

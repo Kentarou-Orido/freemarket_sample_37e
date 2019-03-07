@@ -1,3 +1,9 @@
+.flash-alert {
+  background-color: #ff5500;
+  color: #fff;
+  text-align: center;
+}
+
 .single {
   &-container {
     background-color: #f5f5f5;
@@ -128,6 +134,16 @@
       border-radius: 2px;
       vertical-align: top;
   }
+
+  &-arbitrary {
+      background-color: #ccc;
+      color: white;
+      font-size: 12px;
+      margin: 0 0 0 8px;
+      padding: 3.5px 4px;
+      border-radius: 2px;
+      vertical-align: top;
+    }
 
   &-group {
     margin: 40px 0 0;
@@ -397,6 +413,13 @@ a {
           margin: 24px auto 0;
         }
       }
+    }
+  }
+
+  &-modal {
+    &-body {
+      border-top: 1px solid #eee;
+      padding: 40px;
     }
   }
 }
