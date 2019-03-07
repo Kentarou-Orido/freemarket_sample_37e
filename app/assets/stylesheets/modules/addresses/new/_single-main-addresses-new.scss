@@ -1,0 +1,132 @@
+textarea {
+  resize: none;
+}
+
+.l-single {
+  &__container {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+
+  &__head {
+    padding: 32px 16px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 550;
+    height: 32px;
+    line-height: 1.5;
+  }
+
+  &__inner {
+    padding: 64px;
+    border-top: 1px solid #f5f5f5;
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+.form {
+  &__group {
+    margin: 40px 0 0;
+
+    &:first-of-type {
+      margin: 0;
+    }
+
+    a {
+      display: block;
+      margin: 8px 0 0;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    p {
+      margin: 8px 0 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    .input-default {
+      margin: 8px 0 0;
+    }
+
+    .l-chapter-sub-head {
+      font-size: 16px
+    }
+  }
+
+  &__default {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+
+    &.form-red {
+      background-color: #ea352d;
+    }
+
+    &.form-gray {
+      background-color: #666666;
+    }
+  }
+  &__info-text {
+    margin: 8px 0 0;
+    line-height: 1.5;
+    color: #888;
+  }
+}
+
+.single-main {
+  .btn-default {
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .btn-red {
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin: 40px 0 0;
+  }
+}
+
+.input-default {
+  display: block;
+  height: 28px;
+  width: 286px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+
+  &--remarks {
+    @extend .input-default;
+    height: 250px;
+  }
+}

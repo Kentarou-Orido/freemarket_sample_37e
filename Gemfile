@@ -75,3 +75,4 @@ gem 'payjp'
 gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem "recaptcha", require: "recaptcha/rails"
