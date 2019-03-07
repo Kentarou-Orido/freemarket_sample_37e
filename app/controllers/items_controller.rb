@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:completed_purchase]
+  before_action :authenticate_user!, only: [:show]
 
   def index
   end
