@@ -71,3 +71,4 @@ gem 'font-awesome-rails'
 gem 'rb-readline'
 gem 'payjp'
 gem 'pry-rails'
+gem "recaptcha", require: "recaptcha/rails"

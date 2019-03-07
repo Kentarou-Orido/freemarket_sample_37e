@@ -10,7 +10,7 @@
 |family_name_kana|string|null:false|
 |first_name_kana|string|null:false|
 |encrypted_password|string|null:false, unique: true|
-|telephone|string||
+|telephone|string|null:false, unique: true|
 |birthday|data|null:false, unique: true|
 |icon|string|unique: true|
 |email|string|null:false|
@@ -133,3 +133,9 @@
 
 ### itemsテーブルに関して
 buyer_idカラムとbrandカラムを削除
+
+### addressesテーブルに関して
+room_numberカラムとremarksカラムとuser_idカラムの追加
+
+### usersテーブルに関して
+telephoneカラムにnull: falseオプションとユニークオプション追加

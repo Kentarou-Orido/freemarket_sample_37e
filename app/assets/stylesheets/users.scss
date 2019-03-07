@@ -1,3 +1,5 @@
-.users#show {
-@import "./modules/users/show";
+.users {
+  &#show {
+    @import "./modules/users/show";
+  }
 }

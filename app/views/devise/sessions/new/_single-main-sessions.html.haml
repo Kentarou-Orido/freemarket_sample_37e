@@ -2,7 +2,7 @@
   .login__panel
     .login__no-account
       %p アカウントをお持ちでない方はこちら
-      = link_to "新規会員登録", "https://www.mercari.com/jp/signup/"
+      = link_to "新規会員登録", signups_path
     .login__form__inner
       %button.btn-default.btn-sns-facebook
         = fa_icon "facebook-official"
@@ -10,14 +10,15 @@
       %button.btn-default.btn-sns-google
         = fa_icon "google-plus"
         %span Googleでログイン
-    %form
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
+      = flash[:recaptcha_error]
       .login__form__inner
         .form__group
-          %input.login__input-text.input-default{placeholder: "メールアドレス"}
+          = f.email_field :email, class: "login__input-text input-default", placeholder: "メールアドレス"
         .form__group
-          %input.login__input-text.input-default{placeholder: "パスワード"}
+          = f.password_field :password, class: "login__input-text input-default", placeholder: "パスワード"
         .form__group
-          .login__captcha
-            = image_tag "temp_recaptcha.png", size: "300x78"
-        %button.btn-default.login-submit ログイン
+          = recaptcha_tags
+        = f.submit "ログイン", class: "btn-default login-submit"
         = link_to "パスワードをお忘れの方", "https://www.mercari.com/jp/password/reset/start/"
