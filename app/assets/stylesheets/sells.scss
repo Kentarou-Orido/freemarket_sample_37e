@@ -1,3 +1,8 @@
 .sells#show {
 @import "./modules/sell";
 }
+
+.sells#create {
+@import "./modules/modal";
+@import "./modules/sell";
+}

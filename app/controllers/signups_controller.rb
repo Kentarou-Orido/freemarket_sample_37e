@@ -1,4 +1,4 @@
 class SignupsController < ApplicationController
-  def show
+  def index
   end
 end
