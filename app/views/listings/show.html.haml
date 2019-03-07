@@ -8,7 +8,7 @@
         %ul.listing-tabs
           %li.active
             %h3
-              = link_to "出品中", "/users/listing"
+              = link_to "出品中", users_listing_path
           %li
             %h3
               取引中
@@ -17,26 +17,29 @@
               売却済
         .tab-content
           %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          @items.each do |item|
             %li
-              = link_to '/', {class: 'mypage-item-link'} do
+              = link_to item_path, {class: 'mypage-item-link'} do
                 %figure
-                  = image_tag '/assets/default-header-logo.svg', {class: 'is-higher-widthlazyloaded'}
+                  = image_tag item.image.image_url, {class: 'is-higher-widthlazyloaded'}
                 .mypage-item-body.show-stock-item
-                  .mypage-item-text 写真
+                  %p.mypage-item-text
+                    = item.name
                   %div
                     %span.listing-item-count
-                      %i.icon-like-border
+                      = fa_icon 'heart'
                       %span 0
                     %span.listing-item-count
-                      %i.icon-message
+                      = fa_icon 'comment-alt'
                       %span 0
                 = fa_icon 'angle-right'
-      %ul.mypage-history.pager
-        %li.pager-prev.pager-cell
-          = link_to '/' do
-            = fa_icon 'angle-left'
-        %li.pager-next.pager-cell
-          = link_to '/' do
-            = fa_icon 'angle-right'
+          = paginate @items
+      / %ul.mypage-history.pager
+      /   %li.pager-prev.pager-cell
+      /     = link_to '/' do
+      /       = fa_icon 'angle-left'
+      /   %li.pager-next.pager-cell
+      /     = link_to '/' do
+      /       = fa_icon 'angle-right'
     = render partial: "users/show/mypage-side"
   = render partial: "/default/default-footer"
