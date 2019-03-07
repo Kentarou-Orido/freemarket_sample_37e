@@ -3,7 +3,7 @@
     = link_to "https://www.mercari.com/jp/mypage/" do
       %figure
         = image_tag "member_photo.png", size: "60x60"
-      %h2.bold 織戸健太郎
+      %h2.bold #{current_user.nickname} 様
       .mypage-user-icon__mypage-number
         %div
           評価
