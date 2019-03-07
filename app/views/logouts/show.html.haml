@@ -7,7 +7,7 @@
       .l-chapter-container
         .l-single-inner
           .l-single-content
-            %button.btn-default.btn-red ログアウト
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn-default btn-red'
 
 
     = render partial: "users/show/mypage-side"
