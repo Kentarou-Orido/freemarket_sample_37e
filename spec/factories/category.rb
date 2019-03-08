@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :category do
-    item "1"
+    id 1
     name "靴"
-    ancestry "aaas"
+    ancestry 0
   end
 end
