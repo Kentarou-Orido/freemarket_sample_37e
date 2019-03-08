@@ -22,13 +22,13 @@ html{
 body {
   position: relative;
   min-height: 100%;
-  margin: 0;
   background: $light-gray;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
   color: $black;
   line-height: 1;
 }
+body,
 div,
 dl,
 dt,
