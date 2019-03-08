@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190304123813) do
+=======
+ActiveRecord::Schema.define(version: 20190302071253) do
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "postcode",                    null: false
@@ -116,7 +120,10 @@ ActiveRecord::Schema.define(version: 20190304123813) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+<<<<<<< HEAD
   add_foreign_key "addresses", "users"
+=======
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
   add_foreign_key "cards", "users"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"

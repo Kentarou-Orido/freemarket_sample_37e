@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_item, only: [:show,:purchase,:completed_purchase]
   before_action :set_image, only: [:show,:purchase]
+=======
+  before_action :set_item, only: [:show,:completed_purchase]
+  before_action :checking_login, only: [:purchase]
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
 
   def index
   end
@@ -35,8 +40,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+<<<<<<< HEAD
   def set_image
     @images = @item.images
+=======
+  def checking_login
+    redirect_to new_user_session_path, notice: "この画面はログインしてからご覧になれます" unless user_signed_in?
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
   end
 end
 

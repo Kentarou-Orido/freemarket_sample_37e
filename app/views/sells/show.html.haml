@@ -58,7 +58,11 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
+<<<<<<< HEAD
                       = f.select :size, {xxs: 'xxs', xs: 'xs', s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl', xxxl: 'xxxl', xxxxl: 'xxxxl', free: 'free'}, {prompt: "---"}, {class: 'select-default select-size'}
+=======
+                      = f.select :size, Item.sizes.keys.map {|k| [I18n.t("enums.item.size.#{k}"), k]}, {prompt: "---"}, {class: 'select-default select-size'}
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 = f.fields_for 'brand_attributes', @item.brand do |brand_f|
                   .form-group.form-group-brand
@@ -73,6 +77,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
+<<<<<<< HEAD
                       = f.select :item_condition, {}, {prompt: "---"}, {class: 'select-default'} do
                         %option{value: 'news'} 新品、未使用品
                         %option{value: 'unused'} 未使用に近い
@@ -80,6 +85,9 @@
                         %option{value: 'little_stain'} やや傷や汚れあり
                         %option{value: 'scrached'} 傷や汚れあり
                         %option{value: 'bad'} 全体的に状態が悪い
+=======
+                      = f.select :item_condition, Item.item_conditions.keys.map {|k| [I18n.t("enums.item.item_condition.#{k}"), k]}, {prompt: "---"}, {class: 'select-default'}
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
             .sell-content.clearfix
               %h3.sell-sub-head 配送について
@@ -91,9 +99,13 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
+<<<<<<< HEAD
                       = f.select :delivery_burden, {}, {prompt: "---"}, {class: 'select-default select-delivery'} do
                         %option{value: 'include'} 送料込み（出品者負担）
                         %option{value: 'arrival'} 着払い（購入者負担）
+=======
+                      = f.select :delivery_burden, Item.delivery_burdens.keys.map {|k| [I18n.t("enums.item.delivery_burden.#{k}"), k]}, {prompt: "---"}, {class: 'select-default select-delivery'}
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 .form-group.form-group-shipping
                   = f.label :shipping_method do
@@ -101,6 +113,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
+<<<<<<< HEAD
                       = f.select :shipping_method, {}, {prompt: "---"}, {class: 'select-default select-method'} do
                         %option{value: 'other'} 未定
                         %option{value: 'merukari'} らくらくメルカリ便
@@ -111,6 +124,9 @@
                         %option{value: 'yupack'} ゆうパック
                         %option{value: 'clickpost'} クリックポスト
                         %option{value: 'yupaket'} ゆうパケット
+=======
+                      = f.select :shipping_method, Item.shipping_methods.keys.map {|k| [I18n.t("enums.item.shipping_method.#{k}"), k]}, {prompt: "---"}, {class: 'select-default select-method'}
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 .form-group
                   = f.label :area do
@@ -118,6 +134,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
+<<<<<<< HEAD
                       = f.select :area, {}, {prompt: "---"}, {class: 'select-default'} do
                         %option{value: 'hokkaido'} 北海道
                         %option{value: 'aomori'} 青森県
@@ -167,6 +184,9 @@
                         %option{value: 'kagoshima'} 鹿児島県
                         %option{value: 'okinawa'} 沖縄県
                         %option{value: 'undecided'} 未定
+=======
+                      = f.select :area, Item.areas.keys.map {|k| [I18n.t("enums.item.area.#{k}"), k]}, {prompt: "---"}, {class: 'select-default'}
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 .form-group
                   = f.label :delivery_date do
@@ -174,10 +194,14 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
+<<<<<<< HEAD
                       = f.select :delivery_date, {}, {prompt: "---"}, {class: 'select-default'} do
                         %option{value: 'a_day'} 1~2日で発送
                         %option{value: 'two_day'} 2~3日で発送
                         %option{value: 'four_day'} 4~7日で発送
+=======
+                      = f.select :delivery_date, Item.delivery_dates.keys.map {|k| [I18n.t("enums.item.delivery_date.#{k}"), k]}, {prompt: "---"}, {class: 'select-default'}
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
             .sell-content.clearfix
               %h3.sell-sub-head 販売価格(300~9,999,000)

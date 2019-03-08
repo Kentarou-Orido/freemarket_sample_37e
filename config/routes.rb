@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :users, only: [:show] do
+<<<<<<< HEAD
     resources :profile, :identification, only: [:show]
+=======
+    resources :profile, :identification, only: [:index]
+>>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
     resources :cards, only: [:index, :new]
     resources :addresses, only: [:new, :create]
   end
