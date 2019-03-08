@@ -1,4 +1,4 @@
-class ListingsController < ApplicationController
+class ListingController < ApplicationController
 
   before_action :set_user
 
@@ -8,7 +8,7 @@ class ListingsController < ApplicationController
 
   private
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
 end

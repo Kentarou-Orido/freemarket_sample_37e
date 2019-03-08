@@ -8,7 +8,7 @@
         %ul.listing-tabs
           %li.active
             %h3
-              = link_to "出品中", users_listing_path
+              = link_to "出品中", user_listing_index_path(current_user.id)
           %li
             %h3
               取引中
@@ -17,14 +17,13 @@
               売却済
         .tab-content
           %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
-          @items.each do |item|
             %li
-              = link_to item_path, {class: 'mypage-item-link'} do
+              = link_to "/", {class: 'mypage-item-link'} do
                 %figure
-                  = image_tag item.image.image_url, {class: 'is-higher-widthlazyloaded'}
+                  = image_tag 'default-header-logo.svg', {class: 'is-higher-widthlazyloaded'}
                 .mypage-item-body.show-stock-item
                   %p.mypage-item-text
-                    = item.name
+                    写真
                   %div
                     %span.listing-item-count
                       = fa_icon 'heart'
@@ -33,7 +32,7 @@
                       = fa_icon 'comment-alt'
                       %span 0
                 = fa_icon 'angle-right'
-          = paginate @items
+          / = paginate @items
       / %ul.mypage-history.pager
       /   %li.pager-prev.pager-cell
       /     = link_to '/' do
