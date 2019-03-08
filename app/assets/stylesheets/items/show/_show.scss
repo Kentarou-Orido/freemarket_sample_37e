@@ -160,6 +160,13 @@
     img {
       width: 100%;
       vertical-align: bottom;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+
     }
   }
 
@@ -173,7 +180,6 @@
       display: inline-block;
       width: 25%;
       max-height: 90px;
-      opacity: .4;
       cursor: pointer;
 
       @media screen and (min-width: 768px) {
