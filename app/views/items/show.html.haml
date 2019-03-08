@@ -39,7 +39,8 @@
           %tr
             %th 出品者
             %td
-              %a{href: "https://www.mercari.com/jp/u/387561164/"} #{@seller.nickname}
+              = link_to user_path(current_user.id) do
+                #{@seller.nickname}
               %div
                 .item-user-ratings
                   =fa_icon "smile-o"
@@ -73,23 +74,23 @@
           -if @item.size.present?
             %tr
               %th サイズ
-              %td #{@item.size}
+              %td #{@item.size_i18n}
           %tr
             %th 商品の状態
-            %td #{@item.item_condition}
+            %td #{@item.item_condition_i18n}
           %tr
             %th 配送料の負担
-            %td #{@item.delivery_burden}
+            %td #{@item.delivery_burden_i18n}
           %tr
             %th 配送の方法
-            %td #{@item.shipping_method}
+            %td #{@item.shipping_method_i18n}
           %tr
             %th 配送元地域
             %td
-              %a{href: "https://www.mercari.com/jp/area/28/"} #{@item.area}
+              %a{href: "https://www.mercari.com/jp/area/28/"} #{@item.area_i18n}
           %tr
             %th 発送日の目安
-            %td #{@item.delivery_date}
+            %td #{@item.delivery_date_i18n}
     .item-price-box.text-center
       %span.item-price.bold #{converting_to_jpy(@item.price)}
       %span.item-tax (税込)
