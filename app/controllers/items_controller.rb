@@ -25,8 +25,7 @@ class ItemsController < ApplicationController
         card:    params['payjp-token'],
         currency: 'jpy',
       )
-      # 本当はcurrent_user.id
-      @item.update!(buyer_id: 1)
+      @item.update!(buyer_id: current_user.id)
     end
   end
 
