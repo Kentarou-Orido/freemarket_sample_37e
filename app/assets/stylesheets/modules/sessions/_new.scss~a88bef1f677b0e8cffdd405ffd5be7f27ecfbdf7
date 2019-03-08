@@ -1,7 +1,0 @@
-.single-container {
-  background-color: #f5f5f5;
-}
-@import "./mixin/clearfix";
-@import "./modules/single/single-header";
-@import "./modules/sessions/new/single-main";
-@import "./modules/single/single-footer";

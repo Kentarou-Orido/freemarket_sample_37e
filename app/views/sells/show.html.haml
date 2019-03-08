@@ -58,11 +58,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-<<<<<<< HEAD
-                      = f.select :size, {xxs: 'xxs', xs: 'xs', s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl', xxxl: 'xxxl', xxxxl: 'xxxxl', free: 'free'}, {prompt: "---"}, {class: 'select-default select-size'}
-=======
                       = f.select :size, Item.sizes.keys.map {|k| [I18n.t("enums.item.size.#{k}"), k]}, {prompt: "---"}, {class: 'select-default select-size'}
->>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 = f.fields_for 'brand_attributes', @item.brand do |brand_f|
                   .form-group.form-group-brand
@@ -77,17 +73,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-<<<<<<< HEAD
-                      = f.select :item_condition, {}, {prompt: "---"}, {class: 'select-default'} do
-                        %option{value: 'news'} 新品、未使用品
-                        %option{value: 'unused'} 未使用に近い
-                        %option{value: 'no_stain'} 目立った傷や汚れなし
-                        %option{value: 'little_stain'} やや傷や汚れあり
-                        %option{value: 'scrached'} 傷や汚れあり
-                        %option{value: 'bad'} 全体的に状態が悪い
-=======
                       = f.select :item_condition, Item.item_conditions.keys.map {|k| [I18n.t("enums.item.item_condition.#{k}"), k]}, {prompt: "---"}, {class: 'select-default'}
->>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
             .sell-content.clearfix
               %h3.sell-sub-head 配送について
@@ -99,13 +85,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-<<<<<<< HEAD
-                      = f.select :delivery_burden, {}, {prompt: "---"}, {class: 'select-default select-delivery'} do
-                        %option{value: 'include'} 送料込み（出品者負担）
-                        %option{value: 'arrival'} 着払い（購入者負担）
-=======
                       = f.select :delivery_burden, Item.delivery_burdens.keys.map {|k| [I18n.t("enums.item.delivery_burden.#{k}"), k]}, {prompt: "---"}, {class: 'select-default select-delivery'}
->>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 .form-group.form-group-shipping
                   = f.label :shipping_method do
@@ -113,20 +93,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-<<<<<<< HEAD
-                      = f.select :shipping_method, {}, {prompt: "---"}, {class: 'select-default select-method'} do
-                        %option{value: 'other'} 未定
-                        %option{value: 'merukari'} らくらくメルカリ便
-                        %option{value: 'yumail'} ゆうメール
-                        %option{value: 'letterpack'} レターパック
-                        %option{value: 'normal'} 普通郵便（定形、定形外）
-                        %option{value: 'kuroneko'} クロネコヤマト
-                        %option{value: 'yupack'} ゆうパック
-                        %option{value: 'clickpost'} クリックポスト
-                        %option{value: 'yupaket'} ゆうパケット
-=======
                       = f.select :shipping_method, Item.shipping_methods.keys.map {|k| [I18n.t("enums.item.shipping_method.#{k}"), k]}, {prompt: "---"}, {class: 'select-default select-method'}
->>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 .form-group
                   = f.label :area do
@@ -134,59 +101,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-<<<<<<< HEAD
-                      = f.select :area, {}, {prompt: "---"}, {class: 'select-default'} do
-                        %option{value: 'hokkaido'} 北海道
-                        %option{value: 'aomori'} 青森県
-                        %option{value: 'iwate'} 岩手県
-                        %option{value: 'miyagi'} 宮城県
-                        %option{value: 'akita'} 秋田県
-                        %option{value: 'yamagata'} 山形県
-                        %option{value: 'fukushima'} 福島県
-                        %option{value: 'ibaraki'} 茨城県
-                        %option{value: 'tochigi'} 栃木県
-                        %option{value: 'gunma'} 群馬県
-                        %option{value: 'saitama'} 埼玉県
-                        %option{value: 'chiba'} 千葉県
-                        %option{value: 'tokyo'} 東京都
-                        %option{value: 'kanagawa'} 神奈川県
-                        %option{value: 'nigata'} 新潟県
-                        %option{value: 'toyama'} 富山県
-                        %option{value: 'ishikawa'} 石川県
-                        %option{value: 'fukui'} 福井県
-                        %option{value: 'yamanashi'} 山梨県
-                        %option{value: 'nagano'} 長野県
-                        %option{value: 'gifu'} 岐阜県
-                        %option{value: 'shizuoka'} 静岡県
-                        %option{value: 'aichi'} 愛知県
-                        %option{value: 'mie'} 三重県
-                        %option{value: 'shiga'} 滋賀県
-                        %option{value: 'kyoto'} 京都府
-                        %option{value: 'osaka'} 大阪府
-                        %option{value: 'hyogo'} 兵庫県
-                        %option{value: 'nara'} 奈良県
-                        %option{value: 'wakayama'} 和歌山県
-                        %option{value: 'tottori'} 鳥取県
-                        %option{value: 'shimane'} 島根県
-                        %option{value: 'okayama'} 岡山県
-                        %option{value: 'hiroshima'} 広島県
-                        %option{value: 'yamaguchi'} 山口県
-                        %option{value: 'tokushima'} 徳島県
-                        %option{value: 'kagawa'} 香川県
-                        %option{value: 'ehime'} 愛媛県
-                        %option{value: 'kochi'} 高知県
-                        %option{value: 'fukuoka'} 福岡県
-                        %option{value: 'saga'} 佐賀県
-                        %option{value: 'nagasaki'} 長崎県
-                        %option{value: 'kumamoto'} 熊本県
-                        %option{value: 'oita'} 大分県
-                        %option{value: 'miyazaki'} 宮崎県
-                        %option{value: 'kagoshima'} 鹿児島県
-                        %option{value: 'okinawa'} 沖縄県
-                        %option{value: 'undecided'} 未定
-=======
                       = f.select :area, Item.areas.keys.map {|k| [I18n.t("enums.item.area.#{k}"), k]}, {prompt: "---"}, {class: 'select-default'}
->>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
                 .form-group
                   = f.label :delivery_date do
@@ -194,14 +109,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-<<<<<<< HEAD
-                      = f.select :delivery_date, {}, {prompt: "---"}, {class: 'select-default'} do
-                        %option{value: 'a_day'} 1~2日で発送
-                        %option{value: 'two_day'} 2~3日で発送
-                        %option{value: 'four_day'} 4~7日で発送
-=======
                       = f.select :delivery_date, Item.delivery_dates.keys.map {|k| [I18n.t("enums.item.delivery_date.#{k}"), k]}, {prompt: "---"}, {class: 'select-default'}
->>>>>>> a88bef1f677b0e8cffdd405ffd5be7f27ecfbdf7
                       = fa_icon 'angle-down'
             .sell-content.clearfix
               %h3.sell-sub-head 販売価格(300~9,999,000)
