@@ -1,0 +1,12 @@
+.modal {
+  &-inner {
+    width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+  }
+  &-head {
+    text-align: center;
+    line-height: 80px;
+    font-size: 16px;
+  }
+}
