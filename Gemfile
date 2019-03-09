@@ -50,7 +50,6 @@ group :development, :test do
   gem 'gimei'
   gem 'faker'
   gem 'enum_help'
-  gem 'faker'
 end
 
 group :development do
