@@ -2,37 +2,39 @@
 - if @other_uesr_items.present?
   %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
     %h2.items-box-head.bold
-      %a{href: "https://www.mercari.com/jp/u/387561164/"} #{@seller.nickname}のその他の出品
-      .items-box-content.clearfix
-        - @other_uesr_items[0...6].each do |other_uesr_item|
-          %section.items-box
-            = link_to item_path(id: other_uesr_item.id) do
-              %figure.items-box-photo
-                =image_tag other_uesr_item.images.first.image_url
-              .items-box-body
-                %h3.items-box-name.font-2 #{other_uesr_item.name}
-                .items-box-num.clearfix
-                  .items-box-price.font-5 #{converting_to_jpy(other_uesr_item.price)}
-                  .items-box-likes.font-2
-                    =fa_icon "heart-o"
-                    %span 30
-                  %p.item-box-tax (税込)
+      = link_to "https://www.mercari.com/jp/u/387561164/" do
+        #{@seller.nickname}のその他の出品
+        .items-box-content.clearfix
+          - @other_uesr_items[0...6].each do |other_uesr_item|
+            %section.items-box
+              = link_to item_path(id: other_uesr_item.id) do
+                %figure.items-box-photo
+                  =image_tag other_uesr_item.images.first.image_url
+                .items-box-body
+                  %h3.items-box-name.font-2 #{other_uesr_item.name}
+                  .items-box-num.clearfix
+                    .items-box-price.font-5 #{converting_to_jpy(other_uesr_item.price)}
+                    .items-box-likes.font-2
+                      =fa_icon "heart-o"
+                      %span 30
+                    %p.item-box-tax (税込)
 
 - if @brand_category_items.present?
   %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
     %h2.items-box-head.bold
-      %a{href: "https://www.mercari.com/jp/brand/539/214/"} #{@brand.name}の#{@categories[-1].name}の商品
-      .items-box-content.clearfix
-        - @brand_category_items[0...6].each do |brand_category_item|
-          %section.items-box
-            = link_to item_path(id: brand_category_item.id) do
-              %figure.items-box-photo
-                =image_tag brand_category_item.images.first.image_url
-              .items-box-body
-                %h3.items-box-name.font-2 #{brand_category_item.name}
-                .items-box-num.clearfix
-                  .items-box-price.font-5 #{converting_to_jpy(brand_category_item.price)}
-                  .items-box-likes.font-2
-                    =fa_icon "heart-o"
-                    %span 2
-                  %p.item-box-tax (税込)
+      = link_to "https://www.mercari.com/jp/u/387561164/" do
+        #{@brand.name}の#{@categories[-1].name}の商品
+        .items-box-content.clearfix
+          - @brand_category_items[0...6].each do |brand_category_item|
+            %section.items-box
+              = link_to item_path(id: brand_category_item.id) do
+                %figure.items-box-photo
+                  =image_tag brand_category_item.images.first.image_url
+                .items-box-body
+                  %h3.items-box-name.font-2 #{brand_category_item.name}
+                  .items-box-num.clearfix
+                    .items-box-price.font-5 #{converting_to_jpy(brand_category_item.price)}
+                    .items-box-likes.font-2
+                      =fa_icon "heart-o"
+                      %span 2
+                    %p.item-box-tax (税込)
