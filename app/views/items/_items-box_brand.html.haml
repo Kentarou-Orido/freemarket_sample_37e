@@ -1,7 +1,7 @@
 - @brands.each do |brand|
   - brand.items.first(1).each do |item|
     %section.items-box
-      = link_to(purchase_items_path) do
+      = link_to item_path(item) do
         %figure.items-box-photo
           = image_tag "sample.jpg"
         .items-box-body
