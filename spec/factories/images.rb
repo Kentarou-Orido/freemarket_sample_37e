@@ -2,8 +2,7 @@
 
 FactoryGirl.define do
   factory :image do
-    id              "1"
-    item_id         "1"
-    image_url       "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m68146586775_1.jpg?1551287321"
+    item_id         item
+    image_url       File.open("#{Rails.root}/public/images/no_image.jpg")
   end
 end

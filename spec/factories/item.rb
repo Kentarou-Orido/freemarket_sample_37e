@@ -1,15 +1,20 @@
 FactoryGirl.define do
   factory :item do
-    id              1
-    name            "商品"
-    price           1000
-    item_condition  1
-    area            1
-    shipping_method 2
-    size            2
+    name            Faker::Dessert.variety
+    price           Faker::Number.number(6)
+    item_condition  Faker::Number.between(0, 2)
+    area            Faker::Number.between(0, 46)
+    shipping_method Faker::Number.between(0, 8)
+    size            Faker::Number.between(0, 9)
     text            "aaaaa"
-    buyer_id        'NULL'
-    delivery_date   1
-    delivery_burden 1
+    buyer_id        'nil'
+    created_at  Faker::Time.between(DateTime.now - 1, DateTime.now)
+    updated_at  Faker::Time.between(DateTime.now - 1, DateTime.now)
+    delivery_date  Faker::Number.between(0, 2)
+    delivery_burden  Faker::Number.between(0, 1)
+    brand
+    after(:create) do |item|
+        create_list(:category, 3, items: [item])
+    end
   end
 end
