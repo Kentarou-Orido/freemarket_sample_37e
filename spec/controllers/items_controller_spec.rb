@@ -12,11 +12,13 @@ describe ItemsController do
       get :show, params: { id: @item.id }
       expect(response).to render_template :show
     end
+
     it "assigns the requested article to @item" do
       get :show, params: { id: @item}
       expect(assigns(:item)).to eq @item
     end
   end
+
   describe 'POST #completed_purchase' do
     it "renders the :completed_purchase template" do
       post :completed_purchase, params: { id: @item.id }

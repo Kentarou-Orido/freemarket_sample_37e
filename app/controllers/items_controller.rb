@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
   def set_image
     @images = @item.images
   end
-  
+
   def checking_login
     redirect_to new_user_session_path, notice: "この画面はログインしてからご覧になれます" unless user_signed_in?
   end
