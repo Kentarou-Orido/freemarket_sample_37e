@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20190309164526) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_categoriegroups_on_category_id", using: :btree
-    t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
+    t.index ["category_id"], name: "index_categories_groups_on_category_id", using: :btree
+    t.index ["item_id"], name: "index_categories_groups_on_item_id", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -122,7 +122,6 @@ ActiveRecord::Schema.define(version: 20190309164526) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"
