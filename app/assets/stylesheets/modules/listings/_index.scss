@@ -45,6 +45,9 @@ img {
       width: 700px;
     }
   }
+  .mypage-history {
+    margin: 16px 0 0;
+  }
 }
 
 @media screen and(max-width: 768px) {
@@ -57,6 +60,9 @@ img {
       width: 100%;
     }
   }
+  .mypage-tab-head {
+    padding: 0 16px;
+  }
 }
 
 .mypage {
@@ -68,11 +74,15 @@ img {
     &-container:nth-of-tyoe(1) {
       margin: 0;
     }
+    &-container + .pager {
+      margin: 40px 0 0;
+    }
     &-head {
       padding: 0 4%;
       background: #fafafa;
       font-size: 16px;
       line-height: 72px;
+      box-sizing: inherit;
     }
   }
   &-item {
@@ -110,6 +120,7 @@ img {
       min-height: 80px;
       padding: 16px;
       color: #333;
+      box-sizing: border-box;
       & figure {
         position: relative;
         overflow: hidden;
@@ -117,10 +128,17 @@ img {
         width: 48px;
         height: 48px;
       }
+      & .icon-arrow-right {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translate(0, -50%);
+        font-size: 24px;
+      }
     }
     &-body {
       margin: 0 40px 0 68px;
-      & .show-stock-item {
+      &.show-stock-item {
         margin-right: 100px;
       }
     }
@@ -135,6 +153,39 @@ img {
       line-height: 1.5;
     }
   }
+  &-history {
+    margin: 16px 4% 0;
+    height: 44px;
+  }
+}
+
+.pager {
+  position: relative;
+  font-size: 0;
+  text-align: center;
+  &-cell {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 42px;
+    & a {
+      color: #ccc;
+    }
+  }
+  &-prev {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  &-next {
+    right: 0;
+    position: absolute;
+    top: 0;
+  }
 }
 
 .listing {
@@ -147,14 +198,14 @@ img {
       display: inline-block;
       text-align: center;
       vertical-align: top;
-      & .active {
+      &.active {
         background: #fff;
         & a {
           border-top: 2px solid #ea352d;
         }
       }
     }
-    &+a {
+    & a {
       position: relative;
       display: block;
       color: #333;
@@ -167,8 +218,18 @@ img {
     &-count {
       vertical-align: 2px;
       margin: 0 6px 0 0;
+      & span {
+        vertical-align: middle;
+        margin: 0 0 0 2px;
+        font-size: 16px;
+        color: #888;
+      }
     }
   }
+}
+
+.icon-arrow {
+  font-size: 24px;
 }
 
 .tab {
