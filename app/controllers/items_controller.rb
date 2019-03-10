@@ -1,7 +1,10 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:completed_purchase]
+  before_action :checking_login, only: [:purchase]
 
   def index
+    @categories = Category.all
+    @brands = Brand.all.includes(:items)
   end
 
   def show
@@ -28,5 +31,9 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def checking_login
+    redirect_to new_user_session_path, notice: "この画面はログインしてからご覧になれます" unless user_signed_in?
   end
 end
