@@ -1,0 +1,17 @@
+- @brands.each do |brand|
+  - brand.items.first(1).each do |item|
+    %section.items-box
+      = link_to item_path(item) do
+        %figure.items-box-photo
+          = image_tag "sample.jpg"
+        .items-box-body
+          .items-box-name
+            #{item.name}
+          .items-box-num
+            .items-box-price
+              #{item.price}
+            .items-box-likes
+              %span 100
+              = fa_icon "heart"
+            %p.item-box-tax
+              (税込)

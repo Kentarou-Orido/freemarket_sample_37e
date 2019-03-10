@@ -3,7 +3,25 @@ describe ItemsController do
 
   before do
     @user = create(:user)
-    @item = create(:item, seller_id: @user.id)
+    @brand = create(:brand)
+    @item = create(:item, seller_id: @user.id, brand_id: @brand.id)
+  end
+
+  describe "#index" do
+    it "renders the :index template" do
+      get :index
+      expect(response).to render_template :index
+    end
+    # 正常なレスポンスか？
+    it "responds successfully" do
+      get :index
+      expect(response).to be_success
+    end
+    # 200レスポンスが返ってきているか？
+    it "returns a 200 response" do
+      get :index
+      expect(response).to have_http_status "200"
+    end
   end
 
   describe 'GET #show' do
