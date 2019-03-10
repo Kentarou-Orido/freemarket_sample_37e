@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
   before_action :checking_login, only: [:purchase]
 
   def index
+    @categories = Category.all
+    @brands = Brand.all.includes(:items)
   end
 
   def show
