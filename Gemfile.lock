@@ -99,6 +99,8 @@ GEM
     ffi (1.10.0)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
+    gimei (0.3.0)
+      romaji
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -207,6 +209,8 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    romaji (0.2.4)
+      rake (>= 0.8.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -299,6 +303,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.4.1)
   faker
   font-awesome-rails
+  gimei
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
