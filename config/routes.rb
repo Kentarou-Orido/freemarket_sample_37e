@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :logouts, only: [:show]
-  resource :sell, only: [:show, :create]
+  resource :sell, only: [:show, :create, :edit, :update]
   resources :items, only: [:index, :show] do
     collection do
       get 'purchase'
