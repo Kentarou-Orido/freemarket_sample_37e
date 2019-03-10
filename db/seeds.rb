@@ -64,3 +64,13 @@ Faker::UniqueGenerator.clear
     category_id: Faker::Number.between(1, 4)
   )
 end
+Faker::UniqueGenerator.clear
+
+50.times do
+  Image.create!(
+    item_id: Faker::Number.unique.between(1, 50),
+    image_url: open("#{Rails.root}/public/images/no_image.jpg"),
+    created_at: Faker::Time.between(DateTime.now - 1, DateTime.now),
+    updated_at: Faker::Time.between(DateTime.now - 1, DateTime.now)
+  )
+end
