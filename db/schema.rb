@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20190310065104) do
     t.integer  "item_condition",                null: false
     t.integer  "area",                          null: false
     t.integer  "shipping_method",               null: false
-    t.string   "size"
+    t.integer  "size"
     t.text     "text",            limit: 65535, null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
