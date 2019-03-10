@@ -1,0 +1,10 @@
+%section.items-box-container
+  %h3.text-center
+    = link_to "uses/show" do
+      %span
+        #{category.name}
+        新着アイテム
+  .items-box-content
+    = render "items/items-box_category"
+  .view-all
+    = link_to "すべての商品を見る", ""
