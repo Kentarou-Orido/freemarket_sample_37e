@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(version: 20190310065104) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",     null: false
-    t.string "ancestry"
+    t.string  "name",     null: false
+    t.string  "ancestry"
+    t.integer "item_id"
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
