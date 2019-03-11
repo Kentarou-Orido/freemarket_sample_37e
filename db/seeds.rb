@@ -49,7 +49,7 @@ Brand.create!(name: "ナイキ")
     text: "sample",
     created_at: Faker::Time.between(DateTime.now - 1, DateTime.now),
     updated_at: Faker::Time.between(DateTime.now - 1, DateTime.now),
-    seller_id: Faker::Number.unique.between(1, 50),
+    seller_id: Faker::Number.between(1, 50),
     delivery_date: Faker::Number.between(0, 2),
     delivery_burden: Faker::Number.between(0, 1),
     brand_id: Faker::Number.between(1, 4),
