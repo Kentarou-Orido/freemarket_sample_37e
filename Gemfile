@@ -49,7 +49,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'gimei'
   gem 'faker'
-  gem 'enum_help'
 end
 
 group :development do
@@ -79,3 +78,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'kaminari', '~> 0.17.0'
+gem 'enum_help'

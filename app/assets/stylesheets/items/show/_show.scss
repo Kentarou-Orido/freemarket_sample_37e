@@ -160,6 +160,13 @@
     img {
       width: 100%;
       vertical-align: bottom;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+
     }
   }
 
@@ -167,14 +174,12 @@
   .owl-dots {
     line-height: 0;
     letter-spacing: -.4em;
-
     .owl-dot {
       position: relative;
       overflow: hidden;
       display: inline-block;
       width: 25%;
       max-height: 90px;
-      opacity: .4;
       cursor: pointer;
 
       @media screen and (min-width: 768px) {
@@ -182,7 +187,13 @@
         height: 75px;
         max-height: none;
       }
-
+      &.item-photo-expanded {
+        width: 20%;
+        @media screen and (min-width: 768px) {
+          width: 60px;
+          height: 60px;
+        }
+      }
       &.active {
         opacity: 1;
         cursor: default;
@@ -274,7 +285,10 @@
       margin: 8px auto 0;
       border-collapse: collapse;
       border: 1px solid $light-gray;
-      font-size: 12px;
+
+      &.item-photo-expanded {
+        height: 420px;
+      }
 
       @media screen and (min-width: 768px) {
         float: right;
@@ -418,10 +432,6 @@
 
       &-right {
         margin: 16px 0 0;
-
-        a {
-        color: $black;
-        }
 
        @media screen and (min-width: 768px) {
         margin: 8px 0 0;
