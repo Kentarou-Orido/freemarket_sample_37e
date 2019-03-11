@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(version: 20190310065104) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",     null: false
-    t.string "ancestry"
+    t.string  "name",     null: false
+    t.string  "ancestry"
+    t.integer "item_id"
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
@@ -115,6 +116,7 @@ ActiveRecord::Schema.define(version: 20190310065104) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"
