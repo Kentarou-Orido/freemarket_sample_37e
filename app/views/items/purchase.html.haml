@@ -7,8 +7,6 @@
       .buy-content-inner
         %h3.buy-item-iamge
           = image_tag(@images[0].image_url, class: "is-higher-height lazyloaded")
-
-
         = form_tag action: :completed_purchase,class: "buy-form", method:"POST", id: @item.id do
           %p.buy-item-name.bold #{@item.name}
           %p.buy-price-ja.bold
@@ -30,12 +28,12 @@
       .buy-content-inner
         %h3.bold 配送先
         %address.buy-user-info-text
-          〒XXX-XXXX
+          〒#{@address.postcode.insert(3, '-')}
           %br
-          東京都 まるまる区
-          まるまる X-X-X
+          #{@address.prefectures} #{@address.municipality}
+          #{@address.street_number}
           %br
-          石野 純
+          #{current_user.family_name} #{current_user.first_name} 様
         %p.buy-user-info-text
         = link_to "",class: "buy-user-info-fix" do
           %span 変更する
