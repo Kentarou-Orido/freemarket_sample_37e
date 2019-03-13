@@ -3,14 +3,14 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :users, only: [:show] do
-    resources :profile, :identification, only: [:index]
+    resources :profile, :identification, :listing, only: [:index]
     resources :cards, only: [:index, :new]
     resources :addresses, only: [:new, :create]
   end
 
   resources :logouts, only: [:show]
   resource :sell, only: [:show, :create, :edit, :update]
-  resources :items, only: [:index, :show] do
+  resources :items, only: [:index, :show, :edit] do
     collection do
       get 'purchase'
       post 'completed_purchase'

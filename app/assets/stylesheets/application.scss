@@ -8,6 +8,7 @@
 @import "./users";
 @import "items/*";
 @import "items/show/*";
+@import "items/edit/*";
 @import "items/completed_purchase/*";
 @import "./identifications";
 @import "./logouts";
@@ -21,3 +22,4 @@
 @import "modules/default/footer-sell-btn";
 @import "./addresses";
 @import "./registrations";
+@import "./listing";
