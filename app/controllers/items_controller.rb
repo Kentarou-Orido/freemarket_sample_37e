@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:purchase,:completed_purchase]
   before_action :set_image, only: [:show,:purchase]
   before_action :checking_login, only: [:purchase]
+  before_action :set_user, only: [:purchase]
 
   def index
     @categories = Category.find([1,2,3,4])
@@ -20,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    @address = @user.addresses[0]
   end
 
   def completed_purchase
@@ -43,6 +45,10 @@ class ItemsController < ApplicationController
 
   def set_image
     @images = @item.images
+  end
+
+  def set_user
+    @user = User.find(current_user.id)
   end
 
   def checking_login
