@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show,:purchase,:completed_purchase]
-  before_action :set_image, only: [:show,:purchase]
+  before_action :set_item, only: [:show,:purchase,:completed_purchase, :edit]
+  before_action :set_image, only: [:show,:purchase, :edit]
   before_action :checking_login, only: [:purchase]
   before_action :set_user, only: [:purchase]
 
@@ -13,6 +13,14 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @seller = @item.seller
+    @brand = Brand.find_by_id(@item.brand_id)
+    @categories = @item.categories
+    @other_uesr_items = Item.where(seller_id: @item.seller_id).where.not(id: @item.id)
+    @brand_category_items = @categories[-1].items.where(brand_id: @item.brand_id,buyer_id: nil).where.not(id: @item.id)
+  end
+
+  def edit
     @seller = @item.seller
     @brand = Brand.find_by_id(@item.brand_id)
     @categories = @item.categories
