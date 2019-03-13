@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :image do
+    item_id         item
+    image_url       File.open("#{Rails.root}/public/images/no_image.jpg")
   end
 end

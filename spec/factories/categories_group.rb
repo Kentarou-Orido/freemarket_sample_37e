@@ -1,8 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :categoriegroup do
-    item nil
-    categorie nil
+  factory :categories_group do
+    item
+    category
   end
 end
