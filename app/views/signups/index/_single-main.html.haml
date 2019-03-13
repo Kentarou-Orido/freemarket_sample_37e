@@ -7,8 +7,8 @@
           = fa_icon "envelope"
           %span メールアドレスで登録
         %button.btn-default.btn-sns-facebook
+          = link_to "Facebookで登録", user_facebook_omniauth_authorize_path
           = fa_icon "facebook-official"
-          %span Facebookで登録
         %button.btn-default.btn-sns-google
+          = link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path
           = fa_icon "google-plus"
-          %span Googleで登録
