@@ -1,4 +1,12 @@
-.sells#show {
+.sells#index {
+@import "./modules/sell";
+}
+
+.sells#edit {
+@import "./modules/sell";
+}
+
+.sells#update {
 @import "./modules/sell";
 }
 

@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
   def index
     @categories = Category.find([1,2,3,4])
-    @brands = Brand.all.includes(:items)
+    @brands = Brand.find([1,2,3,4])
   end
 
   def create
