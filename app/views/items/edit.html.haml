@@ -100,7 +100,7 @@
       %p.item-description-inner
         #{@item.text}
   .listing-item-change-box.l-single-container
-    = link_to "商品の編集", "/", class: 'btn-default btn-red'
+    = link_to "商品の編集", edit_sell_path, class: 'btn-default btn-red'
     %p.text-center or
     = link_to "出品を一旦停止する", "/", class: 'btn-default btn-gray'
     = link_to "この商品を削除する", "/", class: 'btn-default btn-gray'
