@@ -24,12 +24,8 @@ class User < ApplicationRecord
             user.first_name = auth.info.first_name
             user.password = 123456
             user.password_confirmation = 123456
-      SnsCredential.create(
-          uid: uid,
-          provider: provider,
-          user_id: user.id,
-          )
-    end
+      end
+      SnsCredential.create( uid: uid, provider: provider, user_id: user.id) if user.present?
       return user
     else
       return snscredential
