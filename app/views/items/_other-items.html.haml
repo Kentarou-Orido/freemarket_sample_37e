@@ -10,6 +10,10 @@
             = link_to item_path(id: other_uesr_item.id) do
               %figure.items-box-photo
                 =image_tag other_uesr_item.images.first.image_url
+                - if other_uesr_item.buyer_id?
+                  %figcaption
+                    .item-sold-out-badge
+                      %div SOLD
               .items-box-body
                 %h3.items-box-name.font-2 #{other_uesr_item.name}
                 .items-box-num.clearfix

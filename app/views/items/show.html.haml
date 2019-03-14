@@ -10,30 +10,35 @@
             .owl-stage
               .owl-item.active
                 .owl-item-inner
-                  =image_tag(@images[0].image_url, style: "opacity: 1;",class: "owl-lazy")
+                  =image_tag(@images.first.image_url, style: "opacity: 1;",class: "owl-lazy")
 
-          -if @images.length < 5
-            .owl-dots
-              - @images.each do |image|
-                .owl-dot
-                  %span
-                  .owl-dot-inner
-                    =image_tag(image.image_url)
-          -else
-            .owl-dots.item-photo-expanded
-              - @images.each do |image|
-                .owl-dot.item-photo-expanded
-                  %span
-                  .owl-dot-inner
-                    =image_tag(image.image_url)
+            -if @images.length < 5
+              .owl-dots
+                - @images.each do |image|
+                  .owl-dot
+                    %span
+                    .owl-dot-inner
+                      =image_tag(image.image_url)
+            -else
+              .owl-dots.item-photo-expanded
+                - @images.each do |image|
+                  .owl-dot.item-photo-expanded
+                    %span
+                    .owl-dot-inner
+                      =image_tag(image.image_url)
+        - if @item.buyer_id?
+          .item-sold-out-badge
+            %div SOLD
 
       .item-price-box.text-center.visible-sp
         %span.item-price.bold #{converting_to_jpy(@item.price)}
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
       %section.visible-sp
-        = link_to "購入画面に進む",purchase_items_path(id: @item.id),class: "item-buy-btn f18-24"
-
+        -if @item.buyer_id == nil
+          = link_to "購入画面に進む",purchase_items_path(id: @item.id),class: "item-buy-btn f18-24"
+        -else
+          .item-buy-btn.disabled.f18-24 売り切れました
       %table{class: "#{(@images.length < 6)? 'item-detail-table' : 'item-detail-table item-photo-expanded'}"}
         %tbody
           %tr
@@ -95,11 +100,14 @@
       %span.item-price.bold #{converting_to_jpy(@item.price)}
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
-    = link_to "購入画面に進む",purchase_items_path(id: @item.id),class: "item-buy-btn f18-24"
-    .item-description.f14-18
-      %p.item-description-inner
-        #{@item.text}
-    .item-button-container.clearfix
+    -if @item.buyer_id == nil
+      = link_to "購入画面に進む",purchase_items_path(id: @item.id),class: "item-buy-btn f18-24"
+    -else
+      .item-buy-btn.disabled.f18-24 売り切れました
+      .item-description.f14-18
+        %p.item-description-inner
+          #{@item.text}
+      .item-button-container.clearfix
       .item-button-left
         %a.item-button.item-button-like{href: "https://www.mercari.com/jp/login/?login_callback=https://item.mercari.com/jp/m70068440240/&login_message=like"}
           =fa_icon "heart-o"
