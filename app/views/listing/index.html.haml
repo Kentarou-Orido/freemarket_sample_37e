@@ -1,6 +1,8 @@
 .default-container
   = render partial: "/default/default-header"
-  = render partial: "users/show/bread-crumbs"
+  %nav.bread-crumbs
+    - breadcrumb :on_display
+    = breadcrumbs separator: "#{content_tag(:i, '', class:'fa fa-angle-right')}"
   %main.l-container.clearfix
     .l-content.clearfix
       %section.mypage-tab-container
