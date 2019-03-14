@@ -17,7 +17,7 @@ class User < ApplicationRecord
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
     unless snscredential
-      user = where(email: auth.info.email).first_or_create do |user|
+      user = where(email: auth.info.email).first_or_initialize do |user|
             user.nickname = auth.info.name
             user.email = auth.info.email
             user.family_name = auth.info.last_name
