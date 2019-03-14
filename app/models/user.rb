@@ -28,7 +28,7 @@ class User < ApplicationRecord
       SnsCredential.create( uid: uid, provider: provider, user_id: user.id) if user.present?
       return user
     else
-      return snscredential
+      user = User.where(id: snscredential.user_id).first
     end
   end
 end
