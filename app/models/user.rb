@@ -16,32 +16,23 @@ class User < ApplicationRecord
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
-    if snscredential.present?
-      user = User.where(id: snscredential.user_id).first
-    else
-      user = User.where(email: auth.info.email).first
-      if user.present?
-        SnsCredential.create(
+    unless snscredential
+      user = where(email: auth.info.email).first_or_create do |user|
+            user.nickname = auth.info.name
+            user.email = auth.info.email
+            user.family_name = auth.info.last_name
+            user.first_name = auth.info.first_name
+            user.password = 123456
+            user.password_confirmation = 123456
+          end
+      user = SnsCredential.create(
           uid: uid,
           provider: provider,
           user_id: user.id,
           )
-      else
-        user = User.create(
-          nickname: auth.info.name,
-          email:    auth.info.email,
-          family_name: auth.info.last_name,
-          first_name: auth.info.first_name,
-          password: "1234567",
-          password_confirmation: "1234567"
-          )
-        SnsCredential.create(
-          uid: uid,
-          provider: provider,
-          user_id: user.id
-          )
-      end
+      return user
+    else
+      return snscredential
     end
-    return user
   end
 end
