@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :logouts, only: [:show]
   resources :sells, only: [:index, :create, :edit, :update]
-  resources :items, only: [:index, :show, :edit] do
+  resources :items, only: [:index, :show, :edit, :destroy] do
     collection do
       get 'purchase'
       post 'completed_purchase'
