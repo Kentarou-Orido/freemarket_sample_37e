@@ -420,6 +420,16 @@ a {
     &-body {
       border-top: 1px solid #eee;
       padding: 40px;
+      & p {
+        margin: 8px 0 0;
+      }
+    }
+  }
+
+  &-draft {
+    height: 100vh;
+    & .btn-red {
+      margin: 40px auto 0;
     }
   }
 }
@@ -445,6 +455,10 @@ a {
     border: 1px solid #aaa;
     color: #fff;
   }
+}
+
+.text-center {
+  text-align: center;
 }
 
 .bold {
