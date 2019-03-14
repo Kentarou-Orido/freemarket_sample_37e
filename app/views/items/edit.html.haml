@@ -103,7 +103,7 @@
     = link_to "商品の編集", edit_sell_path, class: 'btn-default btn-red'
     %p.text-center or
     = link_to "出品を一旦停止する", "/", class: 'btn-default btn-gray'
-    = link_to "この商品を削除する", "/", class: 'btn-default btn-gray'
+    %button.btn-default.btn-gray.modal-open#open この商品を削除する
     #overlay
     .modal
       .modal-inner.modal-banner
