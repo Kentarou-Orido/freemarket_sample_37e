@@ -103,7 +103,25 @@
     = link_to "商品の編集", edit_sell_path, class: 'btn-default btn-red'
     %p.text-center or
     = link_to "出品を一旦停止する", "/", class: 'btn-default btn-gray'
-    = link_to "この商品を削除する", "/", class: 'btn-default btn-gray'
+    %button.btn-default.btn-gray.modal-open#open この商品を削除する
+    #overlay
+    .modal
+      = form_for @item, url: {controller: 'items', action: 'edit'}, html: {class: 'item-destroy'} do |f|
+        .modal-inner.modal-banner
+          .modal-body
+            .modal-head.bold
+              確認
+              %br
+            削除すると二度と復活できません。
+            %br
+            削除する代わりに停止することもできます。
+            %br
+            %br
+            本当に削除しますか？
+          .clearfix
+            #button.modal-btn.modal-btn-cancel#close キャンセル
+            = f.submit '削除する', class: 'modal-btn modal-btn-submit', id: 'button', method: :delete
+
   .item-detail-message
     .message-content
       =form_tag "",class: "message-form", method:"POST"
