@@ -5,7 +5,7 @@
       = link_to "https://www.mercari.com/jp/u/387561164/" do
         #{@seller.nickname}のその他の出品
       .items-box-content.clearfix
-        - @other_uesr_items[0...6].each do |other_uesr_item|
+        - @other_uesr_items[0...9].each do |other_uesr_item|
           %section.items-box
             = link_to item_path(id: other_uesr_item.id) do
               %figure.items-box-photo
