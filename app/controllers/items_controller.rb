@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:purchase,:completed_purchase, :edit]
   before_action :set_image, only: [:show,:purchase, :edit]
   before_action :checking_login, only: [:purchase]
-  before_action :set_user, only: [:purchase]
+  before_action :set_user, only: [:purchase, :destroy]
 
   def index
     @categories = Category.find([1,2,3,4])
