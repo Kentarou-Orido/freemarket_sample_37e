@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     @seller = @item.seller
     @brand = Brand.find_by_id(@item.brand_id)
     @categories = @item.categories
-    @other_uesr_items = Item.where(seller_id: @item.seller_id).where.not(id: @item.id)
+    @other_uesr_items = Item.where(seller_id: @item.seller_id).where.not(id: @item.id).limit(6)
     @brand_category_items = @categories[-1].items.where(brand_id: @item.brand_id,buyer_id: nil).where.not(id: @item.id)
   end
 
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     @seller = @item.seller
     @brand = Brand.find_by_id(@item.brand_id)
     @categories = @item.categories
-    @other_uesr_items = Item.where(seller_id: @item.seller_id).where.not(id: @item.id)
+    @other_uesr_items = Item.where(seller_id: @item.seller_id).where.not(id: @item.id).limit(6)
     @brand_category_items = @categories[-1].items.where(brand_id: @item.brand_id,buyer_id: nil).where.not(id: @item.id)
   end
 
