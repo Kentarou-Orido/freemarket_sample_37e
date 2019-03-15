@@ -10,6 +10,10 @@ crumb :user do
   link "マイページ",user_path(current_user.id)
 end
 
+crumb :logouts do
+  link "ログアウト", logout_path(current_user.id)
+end
+
 crumb :on_display do
   link "出品した商品 - 出品中",user_listing_index_path(current_user.id)
   parent :user
