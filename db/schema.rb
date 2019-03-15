@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190312135717) do
+ActiveRecord::Schema.define(version: 20190312165034) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postcode",                    null: false
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20190312135717) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_categories_groups_on_category_id", using: :btree
-    t.index ["item_id"], name: "index_categories_groups_on_item_id", using: :btree
+    t.index ["category_id"], name: "index_categoriegroups_on_category_id", using: :btree
+    t.index ["item_id"], name: "index_categoriegroups_on_item_id", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -94,6 +94,15 @@ ActiveRecord::Schema.define(version: 20190312135717) do
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
   end
 
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "uid"
+    t.string   "provider"
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -115,6 +124,7 @@ ActiveRecord::Schema.define(version: 20190312135717) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "categories_groups", "categories"
   add_foreign_key "categories_groups", "items"
@@ -122,4 +132,5 @@ ActiveRecord::Schema.define(version: 20190312135717) do
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
+  add_foreign_key "sns_credentials", "users"
 end

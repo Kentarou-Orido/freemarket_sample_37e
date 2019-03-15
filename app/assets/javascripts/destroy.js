@@ -9,7 +9,6 @@ $(function() {
 
   locateCenter();
   $(window).resize(locateCenter);
-
   function locateCenter() {
     let w = $(window).width();
     let h = $(window).height();
