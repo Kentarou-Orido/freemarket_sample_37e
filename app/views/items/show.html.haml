@@ -12,7 +12,7 @@
             .owl-stage
               .owl-item.active
                 .owl-item-inner
-                  =image_tag(@images.first.image_url, style: "opacity: 1;",class: "owl-lazy")
+                  =image_tag(@images[0].image_url, style: "opacity: 1;",class: "owl-lazy")
 
             -if @images.length < 5
               .owl-dots
