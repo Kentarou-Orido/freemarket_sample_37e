@@ -3,7 +3,7 @@
     %section.items-box
       = link_to item_path(item) do
         %figure.items-box-photo
-          = image_tag "sample.jpg"
+          = image_tag item.images.first.image_url.url
         .items-box-body
           .items-box-name
             = item.name

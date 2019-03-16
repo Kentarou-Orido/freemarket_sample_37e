@@ -1,6 +1,8 @@
 .default-container
   = render partial: "default/default-header"
-  = render partial: "users/show/bread-crumbs"
+  %nav.bread-crumbs
+    - breadcrumb :item, @item
+    = breadcrumbs separator: "#{content_tag(:i, '', class:'fa fa-angle-right')}"
   %section.item-box-container.l-single-container
     %h1.item-name #{@item.name}
     .item-main-content.clearfix
@@ -10,7 +12,7 @@
             .owl-stage
               .owl-item.active
                 .owl-item-inner
-                  =image_tag(@images.first.image_url, style: "opacity: 1;",class: "owl-lazy")
+                  =image_tag(@images[0].image_url, style: "opacity: 1;",class: "owl-lazy")
 
             -if @images.length < 5
               .owl-dots

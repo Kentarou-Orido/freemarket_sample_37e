@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_image, only: [:show,:purchase, :edit]
   before_action :checking_login, only: [:purchase]
   before_action :set_user, only: [:purchase, :destroy]
+  before_action :checking_user_want_to_see_for_my_item, only: [:show, :purchase]
 
   def index
     @categories = Category.find([1,2,3,4])
@@ -57,6 +58,12 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def checking_user_want_to_see_for_my_item
+    if user_signed_in?
+      redirect_to edit_item_path(@item) if current_user.id == @item.seller.id
+    end
+  end
 
   def set_item
     @item = Item.find(params[:id])

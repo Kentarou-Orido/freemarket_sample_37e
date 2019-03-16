@@ -1,6 +1,8 @@
 .default-container
   = render partial: "default/default-header"
-  = render partial: "users/show/bread-crumbs"
+  %nav.bread-crumbs
+    - breadcrumb :edit, @user
+    = breadcrumbs separator: "#{content_tag(:i, '', class:'fa fa-angle-right')}"
   %section.item-box-container.l-single-container
     %h1.item-name #{@item.name}
     .item-main-content.clearfix
