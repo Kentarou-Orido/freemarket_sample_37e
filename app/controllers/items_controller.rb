@@ -29,11 +29,6 @@ class ItemsController < ApplicationController
     @brand_category_items = @categories[-1].items.where(brand_id: @item.brand_id,buyer_id: nil).where.not(id: @item.id)
   end
 
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy if @item.seller_id == current_user.id
-  end
-
   def purchase
     @address = @user.addresses[0]
   end
@@ -53,7 +48,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+    @item.destroy if @item.seller_id == current_user.id
     redirect_to user_listing_index_path(@user)
   end
 
