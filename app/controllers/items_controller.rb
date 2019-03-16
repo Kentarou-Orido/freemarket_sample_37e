@@ -54,7 +54,9 @@ class ItemsController < ApplicationController
   private
 
   def checking_user_want_to_see_for_my_item
-    redirect_to edit_item_path(@item) if current_user.id == @item.seller.id
+    if user_signed_in?
+      redirect_to edit_item_path(@item) if current_user.id == @item.seller.id
+    end
   end
 
   def set_item
