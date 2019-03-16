@@ -4,8 +4,8 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to :brand
   has_many :comments
-  has_many :images
-  has_many :categories_groups
+  has_many :images, dependent: :destroy
+  has_many :categories_groups, dependent: :destroy
   has_many :categories, through: :categories_groups
 
   accepts_nested_attributes_for :images

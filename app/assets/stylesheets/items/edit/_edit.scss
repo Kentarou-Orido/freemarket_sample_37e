@@ -787,24 +787,11 @@
 
     &-btn {
       border-top: 1px solid #ccc;
-      width: 50%;
+      width: calc(50% - 1px);
       text-align: center;
       line-height: 63px;
       cursor: pointer;
-
-      &-cancel {
-        float: left;
-      }
-
-      &-submit {
-        color: #0099e8;
-        border-top: 1px solid #ccc;
-        height: 64px;
-        border-color-top: #ccc;
-        border-color-left: #ccc;
-        border-right: 0px;
-        border-bottom: 0px;
-      }
+      float: left;
     }
   }
 
@@ -823,15 +810,8 @@
     z-index: 1
   }
 
-  button {
-    width: 100px;
-    height: 50px;
-    font-size: 1.2em;
-    color: #D04255;
-    background-color: #FFF;
-    border: solid 2px #D04255;
-    border-radius: 3px;
-    transition: .4s;
+  #destroy {
+    border-left: 1px solid #ccc;
   }
 
   p {

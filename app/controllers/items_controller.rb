@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:purchase,:completed_purchase, :edit]
   before_action :set_image, only: [:show,:purchase, :edit]
   before_action :checking_login, only: [:purchase]
-  before_action :set_user, only: [:purchase]
+  before_action :set_user, only: [:purchase, :destroy]
   before_action :checking_user_want_to_see_for_my_item, only: [:show, :purchase]
 
   def index
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy if item.seller_id == current_user.id
+    @item.destroy if @item.seller_id == current_user.id
   end
 
   def purchase
@@ -49,6 +49,12 @@ class ItemsController < ApplicationController
       )
       @item.update!(buyer_id: current_user.id)
     end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to user_listing_index_path(@user)
   end
 
   private
